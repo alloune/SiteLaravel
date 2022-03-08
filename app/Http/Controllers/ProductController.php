@@ -8,7 +8,7 @@ class ProductController extends Controller
 {
     public function displayProductPage(){
 
-        return view('welcome');
+        return view('product');
 
     }
 }

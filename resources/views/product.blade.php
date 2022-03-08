@@ -1,1 +1,3 @@
-<h1>Voici la page de tous les produits</h1>
+@extends('layouts.app')
+
+<h1>test</h1>
