@@ -4,6 +4,7 @@
     overflow: hidden;
 }
 
+
 /* Style the links inside the navigation bar */
 .topnav a {
     float: right;
@@ -82,4 +83,8 @@
 
 .block_with_picture h2 {
     color: #2F7CAA;
+}
+.topnav .logo{
+    position: absolute;
+    left: 0;
 }
