@@ -1,0 +1,33 @@
+body{
+    background: white;
+    color: orange;
+}
+.teacherBlock{
+    width: 100%;
+    text-align: center;
+}
+.globalDesc{
+    margin-top: 100px;
+    margin-left: 250px;
+    display: flex;
+    gap:70rem;
+}
+footer{
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    background-color: #83B6D1;
+    position: sticky;
+    bottom: 0;
+
+    padding-left: 260px;
+}
+.firstPartFoot{
+    display: flex;
+    gap: 200px;
+}
+footer h3{
+    font-size: 20px;
+}
+footer ul{
+    list-style-type: none;
+}
