@@ -88,3 +88,8 @@
     position: absolute;
     left: 0;
 }
+.topnav .logo:hover{
+
+    background-color: transparent;
+
+}
