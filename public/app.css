@@ -16,9 +16,9 @@ footer{
     font-family: "Open Sans", sans-serif;
     color: white;
     background-color: #83B6D1;
-    position: sticky;
+    position: absolute;
+    width: 100%;
     bottom: 0;
-
     padding-left: 260px;
 }
 .firstPartFoot{
