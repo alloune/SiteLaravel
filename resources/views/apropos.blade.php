@@ -4,16 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
     <link rel="stylesheet" href="/app.css">
     <link rel="stylesheet" href="/bahjat.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    @yield('title')
 </head>
 <body>
-@include('layouts.navbar')
-@yield('content')
+<h1>test</h1>
 </body>
 <footer>
     <div class="firstPartFoot">
@@ -50,3 +49,4 @@
     </div>
 </footer>
 </html>
+
