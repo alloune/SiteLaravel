@@ -24,7 +24,7 @@
     </head>
 
     <body class="antialiased">
-    @include('navbar')
+    @include('layouts.navbar')
 
     </body>
 </html>
