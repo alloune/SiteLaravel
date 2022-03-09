@@ -2,6 +2,16 @@
 .topnav {
     background-color: #ffffff;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+
+
+}
+.homepage_img img{
+    width: 100%;
+
 }
 
 
@@ -124,6 +134,7 @@
 .topnav .logo{
     position: absolute;
     left: 0;
+    top: 0;
 }
 .topnav .logo:hover{
 
