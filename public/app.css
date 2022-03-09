@@ -1,0 +1,14 @@
+body{
+    background: white;
+    color: orange;
+}
+.teacherBlock{
+    width: 100%;
+    text-align: center;
+}
+.globalDesc{
+    margin-top: 100px;
+    margin-left: 250px;
+    display: flex;
+    gap:70rem;
+}
