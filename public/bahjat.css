@@ -33,6 +33,53 @@
     height: 807px;
     left: 0px;
     top: 60px;
-    background-color: rgba(26, 150, 217, 0.33);
 }
 
+.centered_text {
+    font-family: "Open Sans";
+    text-align: center;
+    color: #000000;
+    font-size: 48px;
+    font-weight: bolder;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: +10;
+}
+
+.img_button {
+    box-shadow: 0px 10px 14px -7px #094e79;
+    background-color:#094e79;
+    border-radius:18px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:20px;
+    font-weight:bold;
+    padding:13px 32px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #094e79;
+}
+
+.img_button:active {
+    position:relative;
+    top:1px;
+}
+
+.h1_homepage {
+    text-align: center;
+}
+
+.logo_university_homepage {
+    display: flex;
+    padding-left: 230px;
+}
+
+.block_with_picture p {
+    color: #000000;
+}
+
+.block_with_picture h2 {
+    color: #2F7CAA;
+}
