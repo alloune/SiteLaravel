@@ -16,6 +16,6 @@ use App\Http\Controllers\AboutController;
 
 Route::get('/', function () {
     return view('welcome');
-});
-Route::get('/products', [ProductController::class, 'displayProductPage']);
-Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ]);
+})->name('home');
+Route::get('/products', [ProductController::class, 'displayProductPage'])->name('products');
+Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');

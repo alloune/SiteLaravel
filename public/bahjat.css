@@ -4,6 +4,7 @@
     overflow: hidden;
 }
 
+
 /* Style the links inside the navigation bar */
 .topnav a {
     float: right;
@@ -88,6 +89,7 @@
     color: #2F7CAA;
 }
 
+
 .courses_button {
     box-shadow: -2px 3px 13px 0px #5e575e;
     background-color:#f39573;
@@ -118,4 +120,14 @@
 .courses_button a {
     text-decoration: none;
     color: #ffffff;
+
+.topnav .logo{
+    position: absolute;
+    left: 0;
+}
+.topnav .logo:hover{
+
+    background-color: transparent;
+
+
 }
