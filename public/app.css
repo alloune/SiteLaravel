@@ -12,3 +12,22 @@ body{
     display: flex;
     gap:70rem;
 }
+footer{
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    background-color: #83B6D1;
+    position: sticky;
+    bottom: 0;
+
+    padding-left: 260px;
+}
+.firstPartFoot{
+    display: flex;
+    gap: 200px;
+}
+footer h3{
+    font-size: 20px;
+}
+footer ul{
+    list-style-type: none;
+}
