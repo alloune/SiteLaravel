@@ -1,0 +1,38 @@
+h1 {
+    text-align: center;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+}
+.nous {
+    display: flex;
+    justify-content: space-around;
+}
+.nom {
+    text-align: center;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+
+}
+.description {
+    text-align: left;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    gap: 32px;
+    margin-left: 88px;
+    padding-left;
+    padding-rigth ;
+
+}
+.description, p {
+
+
+}
