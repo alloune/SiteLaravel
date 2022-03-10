@@ -9,12 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    @yield('title')
+    <title>@yield('title')</title>
 </head>
 <body>
 @include('layouts.navbar')
 @yield('content')
-</body>
+
 <footer>
     <div class="firstPartFoot">
         <div class="listFooterGraduate">
@@ -49,4 +49,5 @@
         <p>&copy; 2022 Graduate Inc. Tous droits réservés.</p>
     </div>
 </footer>
+</body>
 </html>

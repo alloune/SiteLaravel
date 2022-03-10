@@ -1,8 +1,5 @@
 @extends('layouts.app')
-@section('title')
-    <title>Home</title>
-@endsection
-
+@section('title', "Home")
 @section('content')
 
     <div class="homepage_img">
