@@ -26,5 +26,11 @@ class VignetteController extends Controller
 
 );
 
+    public function displayCertif(){
+
+        return view('welcome_testa');
+
+    }
+
 
 }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\VignetteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +15,7 @@ use App\Http\Controllers\AboutController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome_testa');
-})->name('home');
+Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
+
 Route::get('/products', [ProductController::class, 'displayProductPage'])->name('products');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
