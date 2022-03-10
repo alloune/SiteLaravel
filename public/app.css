@@ -19,11 +19,11 @@ footer{
     position: relative;
     width: 100%;
     bottom: 0;
-    padding-left: 260px;
 }
 .firstPartFoot{
     display: flex;
     gap: 200px;
+    padding-left: 260px;
 }
 footer h3{
     font-size: 20px;

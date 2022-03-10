@@ -6,7 +6,7 @@
         <img src="{{ asset('homepage_graduation.jpg') }}" alt="graduating">
         <div class="centered_text">
             <p>APPRENEZ<br>DES PLUS GRANDES UNIVERSITES  DEPUIS CHEZ VOUS</p>
-            <a href="#" class="img_button">Inscrivez-vous<br>gratuitement</a>
+            <a href="{{ route('products') }}" class="img_button">Inscrivez-vous<br>gratuitement</a>
         </div>
     </div>
     <div>
@@ -21,7 +21,7 @@
         <img src="{{ asset('cours_pics.jpg') }}" alt="test">
     </div>
     <div class="courses_button">
-        <a href="#" class="myButton">Découvrez nos cours gratuits</a>
+        <a href="{{ route('products') }}" class="myButton">Découvrez nos cours gratuits</a>
     </div>
     </div>
     <div class="block_with_picture">
@@ -31,8 +31,9 @@
         <img src="{{ asset('cours_pics.jpg') }}" alt="test">
     </div>
     <div class="courses_button">
-        <a href="#" class="myButton">Découvrez nos formations diplomantes </a>
-    </div></div>
+        <a href="{{ route('products') }}" class="myButton">Découvrez nos formations diplomantes </a>
+    </div>
+    </div>
     <div class="block_with_picture">
         <h2>Cours certifiants</h2>
         <p>Découvrez nos cours certifiants. Attirez les recruteurs en valorisant votre validation du cours par une certification
@@ -40,7 +41,7 @@
         <img src="{{ asset('cours_pics.jpg') }}" alt="test">
     </div>
     <div class="courses_button">
-        <a href="#" class="myButton">Découvrez nos cours certifiants</a>
+        <a href="{{ route('products') }}" class="myButton">Découvrez nos cours certifiants</a>
     </div>
 
 
