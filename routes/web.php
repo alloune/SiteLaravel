@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\VignetteController;
+use App\Http\Controllers\UniversitiesLogoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
