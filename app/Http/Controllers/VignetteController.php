@@ -6,31 +6,32 @@ use Illuminate\Http\Request;
 
 class VignetteController extends Controller
 {
+    private $listCertif = [
+        "sorbonne" => [
+            "name" => "logoSorbonne.png",
+            "description" => "Résolution de problèmes par méthodes computationnelles",
+            "backgroundImg" => "sorbBGImg"],
+        "milano" => [
+            "name" => "logoMilan.png",
+            "description" => "DNA Decodificato",
+            "backgroundImg" => "milanoBGImg"],
+        "bordeaux" => [
+            "name" => "logoBordeaux.png",
+            "description" => "MLOps,(Machine Learning Operations) Fundamentals",
+            "backgroundImg" => "bordeauxBGImg"],
+        "stanford" => [
+            "name" => "logoStan.png",
+            "description" => "Applied data science with Python",
+            "backgroundImg" => "stanfordBGImg"],
+
+    ];
 
 
-    public function displayCertif(){
+    public function displayCertif()
+    {
 
-        $listCertif = array(
-            "sorbonne" => array(
-                "name" => "logoSorbonne.png",
-                "description" => "Résolution de problèmes par méthodes computationnelles",
-                "backgroundImg" => "sorbBGImg"),
-            "milano" => array(
-                "name" => "logoMilan.png",
-                "description" => "DNA Decodificato",
-                "backgroundImg" => "milanoBGImg"),
-            "bordeaux" => array(
-                "name" => "logoBordeaux.png",
-                "description" => "MLOps,(Machine Learning Operations) Fundamentals",
-                "backgroundImg" => "bordeauxBGImg"),
-            "stanford" => array(
-                "name" => "logoStan.png",
-                "description" => "Applied data science with Python",
-                "backgroundImg" => "stanfordBGImg"),
 
-        );
-
-        return view('welcome_testa', ['listCertif'=> $listCertif]);
+        return view('welcome_testa', ['listCertif' => $this->listCertif]);
 
     }
 
