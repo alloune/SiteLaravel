@@ -16,6 +16,5 @@ use App\Http\Controllers\VignetteController;
 */
 
 Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
-
 Route::get('/products', [ProductController::class, 'displayProductPage'])->name('products');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
