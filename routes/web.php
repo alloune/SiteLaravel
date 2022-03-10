@@ -15,7 +15,7 @@ use App\Http\Controllers\AboutController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome_testa');
 })->name('home');
 Route::get('/products', [ProductController::class, 'displayProductPage'])->name('products');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
