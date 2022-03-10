@@ -15,9 +15,14 @@
     <div class="logo_university_homepage">
         <img src="{{ asset('logo_universite.jpg') }}" alt="logo university">
     </div>
-{{--        @foreach($listCertif as $certif)--}}
-{{--            {{var_dump($certif)}}--}}
-{{--        @endforeach--}}
+        @foreach($listCertif as $key => $certif)
+            <div>
+                <h1>{{ $key }}</h1>
+                <p>{{ $certif['description'] }}</p>
+                <img src="{{ $certif['backgroundImg'] }}" alt="background image de la fac">
+            </div>
+
+        @endforeach
     <div class="courses_button">
         <a href="{{ route('products') }}" class="myButton">Découvrez nos cours certifiants</a>
     </div>
