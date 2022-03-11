@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Products')
 @section('content')
-    @dd($products)
+
 
     <div class="teacherBlock">
         <h2>Nom du produit</h2>
