@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('title')
-    Graduate - {{ $product[0]->name }}
+{{--    Graduate - {{ $product->name }}--}}
 @endsection
 
 @section('content')
     <div class="productInfo">
+
         <div>
-            <h1>{{ $product[0]->name }}</h1>
-            <img src="{{ $product[0]->image }}">
-            <p>Prix : {{ $product[0]->price }} €</p>
-            <p>Weight : {{ $product[0]->price }}</p>
+            <h1>{{ $product->name }}</h1>
+            <img src="{{ $product->image }}">
+            <p>Prix : {{ $product->price }} €</p>
+            <p>Weight : {{ $product->price }}</p>
         </div>
         <div class="productDesc">
-            <p>{{ $product[0]->description }}</p>
+            <p>{{ $product->description }}</p>
         </div>
     </div>
 @endsection

@@ -31,8 +31,7 @@ class UserController extends Controller
         $id = $request->input('id');
 
 //        $product = DB::select("SELECT * FROM products WHERE id = :id", array('id'=>$id));
-        $product = Products::where('id', $id)->
-        get();
+        $product = Products::where('id', $id)->first();
 
         return view('unique', ['product'=>$product]);
 
