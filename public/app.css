@@ -1,6 +1,8 @@
 body{
     background: white;
     color: orange;
+    position: relative;
+    top: 70px;
 }
 .teacherBlock{
     width: 100%;
