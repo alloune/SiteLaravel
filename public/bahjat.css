@@ -38,6 +38,7 @@
     color: white;
 }
 
+
 .homepage_img {
     position: center;
     width: 100%;
@@ -84,7 +85,8 @@
 
 .logo_university_homepage {
     display: flex;
-    padding-left: 230px;
+    justify-content: space-around;
+    padding-top: 25px;
 }
 
 .block_with_picture {
