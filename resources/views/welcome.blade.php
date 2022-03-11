@@ -23,7 +23,6 @@
     <div class="courses_button">
         <a href="{{ route('products') }}" class="myButton">Découvrez nos cours gratuits</a>
     </div>
-    </div>
     <div class="block_with_picture">
         <h2>Formations diplomantes</h2>
         <p>Formez-vous dans les universités les plus prestigieuses du monde et valoriser votre travail par l’obtention
@@ -32,7 +31,6 @@
     </div>
     <div class="courses_button">
         <a href="{{ route('products') }}" class="myButton">Découvrez nos formations diplomantes </a>
-    </div>
     </div>
     <div class="block_with_picture">
         <h2>Cours certifiants</h2>
