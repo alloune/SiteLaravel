@@ -5,13 +5,20 @@ body{
 .teacherBlock{
     width: 100%;
     text-align: center;
+    margin-top: 50px;
 }
 .globalDesc{
-    margin-top: 100px;
-    margin-left: 250px;
     display: flex;
-    gap:70rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 20px;
 }
+
+.globalDesc p {
+    color: black;
+}
+
 footer{
     font-family: "Open Sans", sans-serif;
     color: white;
