@@ -9,7 +9,7 @@
         <div>
             <h1>{{ $product[0]->name }}</h1>
             <img src="{{ $product[0]->image }}">
-            <p>Prix : {{ $product[0]->price }}</p>
+            <p>Prix : {{ $product[0]->price }} €</p>
             <p>Weight : {{ $product[0]->price }}</p>
         </div>
         <div class="productDesc">

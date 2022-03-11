@@ -18,7 +18,7 @@
 
                         <p>{{ $product->name }}</p>
                         <img src="{{ $product->image }}">
-                        <p>Prix : {{ $product->price }}</p>
+                        <p>Prix : {{ $product->price }} €</p>
                         <input type="hidden" name="id" value="{{ $product->id }}">
                         <input type="submit" value="Voir les infos">
 
