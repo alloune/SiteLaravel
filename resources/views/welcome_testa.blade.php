@@ -20,7 +20,7 @@
     <div class="block_with_picture">
         @foreach($listCertif as $key => $certif)
         <div class="">
-                <h1>{{ $key }}</h1>
+                <h1>ttt {{ $key }}</h1>
                 <p>{{ $certif['description'] }}</p>
                 <img src="{{ $certif['backgroundImg'] }}" alt="background image de la fac">
 

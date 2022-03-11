@@ -12,26 +12,24 @@
     <div class="description">
         <h3>Conditions</h3>
             <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
-                <li>d</li>
+                @foreach($products as $product)
+                    <form action="{{route('product',$product->id) }}" method="GET">
+                    <li>
+
+                        <p>{{ $product->name }}</p>
+                        <img src="{{ $product->image }}">
+                        <p>Prix : {{ $product->price }}</p>
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <input type="submit" value="Voir les infos">
+
+                    </li>
+                    </form>
+
+                @endforeach
             </ul>
-        <h3>Deroulement</h3>
-            <ul>
-                <li>Bloc 1</li>
-                <p>lorem ipsum blablabla</p>
-                <li>bloc2</li>
-                <p>lorem ipsum blablabla</p>
-                <li>bloc3</li>
-                <p>lorem ipsum blablabla</p>
-            </ul>
+
+    </div>
     </div>
 
-    <div class="resume">
-        <img src="#" alt="Image de présentation">
-        <p>Présentation de la formation, le prix</p>
-        <p> Petit cadre pour presenter l'école</p>
-    </div>
-    </div>
+
 @endsection

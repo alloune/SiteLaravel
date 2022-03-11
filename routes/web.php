@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\VignetteController;
 use App\Http\Controllers\UniversitiesLogoController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,5 +18,6 @@ use App\Http\Controllers\UniversitiesLogoController;
 */
 
 Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
-Route::get('/products', [ProductController::class, 'displayProductPage'])->name('products');
+Route::get('/products', [UserController::class, 'index'])->name('products');
+Route::get('/product/{id}', [UserController::class, 'displayProduct'])->name('product');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
