@@ -1,22 +1,21 @@
 @extends('layouts.app')
-@section('title', 'Products')
+@section('title', 'Product')
 @section('content')
 
     <div class="teacherBlock">
-        <h2>Nos produits</h2>
+        <h2>Hello</h2>
     </div>
 
     <div class="globalDesc">
+{{--        @dd($product[0])--}}
 
-        @foreach($products as $key => $list)
+        @foreach($product as $key => $list)
             <li>
         <p>Nom du produit: {{ $list->name }}</p>
-            <a href="{{ route('product', $list->id) }}"><img src="{{ $list->image }}"></a>
+            <img src="{{ $list->image }}">
                 <p>Prix: {{ $list->price }} €</p>
             </li>
-
         @endforeach
-{{--        @dump($list)--}}
 
     </div>
 @endsection

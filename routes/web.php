@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\ProductDescriptionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\VignetteController;
-use App\Http\Controllers\UniversitiesLogoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,4 @@ use App\Http\Controllers\UniversitiesLogoController;
 Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
 Route::get('/products', [ProductController::class, 'displayProductPage'])->name('products');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
+Route::get('/product/{id}', [ProductDescriptionController::class, 'displayProduct'])->name('product');

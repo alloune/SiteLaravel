@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function displayProductPage(){
+    public function displayProductPage()
+    {
 
         $products = DB::select('select * from products');
-//        dd($products);
 
         return view('product_db', ['products' => $products]);
 
