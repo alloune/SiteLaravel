@@ -85,12 +85,12 @@
 
 .logo_university_homepage {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding-top: 25px;
 }
 
 .block_with_picture {
-    padding-left: 230px;
+    padding-left: 0px;
 
 }
 
