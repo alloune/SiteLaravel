@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Products')
 @section('content')
+    @dd($products)
 
     <div class="teacherBlock">
         <h2>Nom du produit</h2>
@@ -9,26 +10,36 @@
 
     </div>
     <div class="globalDesc">
-    <div class="description">
-        <h3>Conditions</h3>
+        <div class="description">
+            <h3>Conditions</h3>
+            <select>
+                <option value="price">
+                    Trier par prix
+                </option>
+                <option value="name">
+                    Trier par nom
+                </option>
+            </select>
+            <input type="submit" value="Valider">
+
             <ul>
                 @foreach($products as $product)
                     <form action="{{route('product',$product->id) }}" method="GET">
-                    <li>
+                        <li>
 
-                        <p>{{ $product->name }}</p>
-                        <img src="{{ $product->image }}">
-                        <p>Prix : {{ $product->price }} €</p>
-                        <input type="hidden" name="id" value="{{ $product->id }}">
-                        <input type="submit" value="Voir les infos">
+                            <p>{{ $product->name }}</p>
+                            <img src="{{ $product->image }}">
+                            <p>Prix : {{ $product->price }} €</p>
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <input type="submit" value="Voir les infos">
 
-                    </li>
+                        </li>
                     </form>
 
                 @endforeach
             </ul>
 
-    </div>
+        </div>
     </div>
 
 
