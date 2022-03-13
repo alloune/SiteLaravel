@@ -47,7 +47,8 @@ class ProductController extends Controller
      */
     public function show(Products $products)
     {
-        //
+        $displayProduct=Products::where('id', $products->id)->first();
+        return view('backoffice.show', compact("displayProduct"));
     }
 
     /**

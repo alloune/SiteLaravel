@@ -10,8 +10,6 @@ class UserController extends Controller
 {
 
 
-
-
     public function index()
     {
 //        $product_test = Products::where()
@@ -20,12 +18,11 @@ class UserController extends Controller
         get();
 
 
-        return view('product', ['products'=> $products]);
+        return view('product', ['products' => $products]);
     }
 
-    public function displayProduct(Request $request){
-
-
+    public function displayProduct(Request $request)
+    {
 
 
         $id = $request->input('id');
@@ -33,7 +30,7 @@ class UserController extends Controller
 //        $product = DB::select("SELECT * FROM products WHERE id = :id", array('id'=>$id));
         $product = Products::where('id', $id)->first();
 
-        return view('unique', ['product'=>$product]);
+        return view('unique', ['product' => $product]);
 
     }
 
