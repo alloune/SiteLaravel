@@ -45,10 +45,10 @@ class ProductController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $products)
+    public function show(Products $backoffice)
+        //ATTENTION !!! Le nom de la variable doit être identique au nom dans la route
     {
-        $displayProduct=Products::where('id', $products->id)->first();
-        return view('backoffice.show', compact("displayProduct"));
+        return view('backoffice.show', compact("backoffice"));
     }
 
     /**

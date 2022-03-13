@@ -20,9 +20,8 @@
 
             <tr>
                 <td>{{ $product->name }}</td>
-                @dump($product)
-                <td><a href="{{ route('backoffice.show', $product) }}">Voir</a></td>
-                <td>Modifier</td>
+                <td><a href="{{ route('backoffice.show', $product) }}"> PRODUCT ID = {{ $product->id  }} Voir</a></td>
+                <td><a href="#">Modifier</a></td>
                 <td>Supprimer</td>
             </tr>
         @endforeach
