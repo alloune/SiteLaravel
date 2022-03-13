@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="productInfo">
-
+{{--@dd($product)--}}
         <div>
             <h1>{{ $product->name }}</h1>
             <img src="{{ $product->image }}">
