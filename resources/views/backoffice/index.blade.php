@@ -20,14 +20,21 @@
 
             <tr>
                 <td>{{ $product->name }}</td>
-                <td><a href="{{ route('backoffice.show', $product) }}"> PRODUCT ID = {{ $product->id  }} Voir</a></td>
-                <td><a href="#">Modifier</a></td>
-                <td>Supprimer</td>
+                <td><a href="{{ route('backoffice.show', ['backoffice'=>$product]) }}">Voir</a></td>
+                <td><a href="{{ route('backoffice.edit', ['backoffice'=>$product]) }}">Modifier</a></td>
+                <td><form method="Post" action="{{ route('backoffice.destroy', ['backoffice'=>$product->id]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Supprimer">
+                    </form>
+                </td>
             </tr>
         @endforeach
         </tbody>
 
     </table>
     <h3>Ajouter une formation</h3>
+
+    <a href="{{ route("backoffice.create") }}">Créer une formation</a>
 @endsection
 

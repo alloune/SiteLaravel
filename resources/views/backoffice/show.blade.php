@@ -23,7 +23,7 @@
     <p>{{ $backoffice->weight }}</p>
 
     <h3>Disponible: </h3>
-    <p>{{ $backoffice->avaible }}</p>
+    <p>{{ $backoffice->available }}</p>
 
     <h3>Quantité : </h3>
     <p>{{ $backoffice->quantity }}</p>
