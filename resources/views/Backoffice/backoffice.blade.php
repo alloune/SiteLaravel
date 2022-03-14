@@ -20,14 +20,21 @@
             <td>{{ $list->description }}</td>
             <td>{{ $list->price }} €</td>
             <td>{{ $list->quantity }}</td>
-            <td><div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary">Update</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div></td>
+            <td>
+                <a href="{{ route('backofficeproduct', $list->id) }}"> <button type="button" class="btn btn-primary">View</button></a>
+                <button type="button" class="btn btn-primary">Update</button>
+
+                <button type="button" class="btn btn-danger">Delete</button>
+            </td>
         </tr>
+
         </tbody>
         @endforeach
+
     </table>
+
+    <button type="button" class="btn btn-success">Add product</button>
+
 
 
 @endsection

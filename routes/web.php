@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\VignetteController;
-use App\Http\Controllers\BackofficeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +23,5 @@ Route::get('/products', [ProductController::class, 'displayProductPage'])->name(
 Route::get('/products/by_price', [ProductController::class, 'sortProducts'])->name('sortedproducts');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
 Route::get('/product/{product}', [ProductDescriptionController::class, 'displayProduct'])->name('product');
-route::get('/backoffice',[BackofficeProductController::class, 'displayBakcOfficeProducts'])->name("backoffice");
+Route::get('/backoffice',[BackofficeProductController::class, 'displayBakcOfficeProducts'])->name("backofficeproducts");
+Route::get('/backoffice/product/{product}',[BackofficeProductController::class, 'displayBakcOfficeProduct'])->name("backofficeproduct");

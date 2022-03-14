@@ -14,6 +14,14 @@ class BackofficeProductController extends Controller
     public function displayBakcOfficeProducts(): Factory|View|Application
     {
         $products = Products::orderBy('name', 'ASC')->get();
-        return view('backoffice', ['products' => $products]);
+        return view('Backoffice.backoffice', ['products' => $products]);
     }
+
+    public function displayBakcOfficeProduct(Products $product): Factory|View|Application
+    {
+
+        return view('Backoffice.backoffice_product', ['product' => $product]);
+    }
+
+
 }

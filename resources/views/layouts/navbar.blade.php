@@ -6,6 +6,6 @@
     <a style="background-color: #1A96D9; color: #ffffff"  href="#">Connexion</a>
     <a href="#">Mon panier</a>
     <a href="{{route('aboutus')}}">A propos</a>
-    <a href="{{route('backoffice')}}">BackOffice</a>
+    <a href="{{route('backofficeproducts')}}">BackOffice</a>
     <a href="{{route('products')}}">Diplômes</a>
 </div>
