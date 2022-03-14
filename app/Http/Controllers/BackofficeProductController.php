@@ -23,5 +23,11 @@ class BackofficeProductController extends Controller
         return view('Backoffice.backoffice_product', ['product' => $product]);
     }
 
+    public function editBakcOfficeProduct(Products $product): Factory|View|Application
+    {
+
+        return view('Backoffice.backoffice_product_edit', ['product' => $product]);
+    }
+
 
 }

@@ -22,7 +22,7 @@
             <td>{{ $list->quantity }}</td>
             <td>
                 <a href="{{ route('backofficeproduct', $list->id) }}"> <button type="button" class="btn btn-primary">View</button></a>
-                <button type="button" class="btn btn-primary">Update</button>
+                <a href="{{ route('backofficeproductedit', $list->id) }}"><button type="button" class="btn btn-primary">Update</button></a>
 
                 <button type="button" class="btn btn-danger">Delete</button>
             </td>

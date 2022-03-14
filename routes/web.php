@@ -25,3 +25,4 @@ Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus'
 Route::get('/product/{product}', [ProductDescriptionController::class, 'displayProduct'])->name('product');
 Route::get('/backoffice',[BackofficeProductController::class, 'displayBakcOfficeProducts'])->name("backofficeproducts");
 Route::get('/backoffice/product/{product}',[BackofficeProductController::class, 'displayBakcOfficeProduct'])->name("backofficeproduct");
+Route::get('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'editBakcOfficeProduct'])->name("backofficeproductedit");
