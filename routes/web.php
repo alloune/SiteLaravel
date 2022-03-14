@@ -19,5 +19,6 @@ use App\Http\Controllers\VignetteController;
 
 Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
 Route::get('/products', [ProductController::class, 'displayProductPage'])->name('products');
+Route::get('/products/by_price', [ProductController::class, 'sortProducts'])->name('sortedproducts');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
 Route::get('/product/{product}', [ProductDescriptionController::class, 'displayProduct'])->name('product');

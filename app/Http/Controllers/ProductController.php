@@ -20,4 +20,17 @@ class ProductController extends Controller
 
     }
 
+    public function sortProducts(): Factory|View|Application
+    {
+        if ($_REQUEST == ['products' => 'price']) {
+
+            $products = Products::orderBy('price', 'ASC')->get();
+            return view('product_db', ['products' => $products]);
+        }
+
+        else {
+            $products = Products::orderBy('name', 'ASC')->get();
+        }
+        return view('product_db', ['products' => $products]);
+    }
 }

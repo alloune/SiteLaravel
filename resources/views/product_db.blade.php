@@ -5,7 +5,15 @@
     <div class="teacherBlock">
         <h2>Nos produits</h2>
     </div>
-
+    <form action="{{ route('sortedproducts') }}" method="GET">
+    <label for="products">Trier par:</label>
+    <select name="products" id="products">
+        <option value="name">Nom du produit</option>
+        <option value="price">Prix</option>
+    </select>
+    <input type="submit" value="Valider">
+    </form>
+{{--    @dd($_REQUEST)--}}
     <div class="globalDesc">
 
         @foreach($products as $key => $list)
