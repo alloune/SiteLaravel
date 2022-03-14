@@ -13,7 +13,6 @@
     </select>
     <input type="submit" value="Valider">
     </form>
-{{--    @dd($_REQUEST)--}}
     <div class="globalDesc">
 
         @foreach($products as $key => $list)
@@ -24,7 +23,6 @@
             </li>
 
         @endforeach
-{{--        @dump($list)--}}
 
     </div>
 @endsection
