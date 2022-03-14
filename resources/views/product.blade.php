@@ -12,15 +12,18 @@
     <div class="globalDesc">
         <div class="description">
             <h3>Conditions</h3>
-            <select>
-                <option value="price">
-                    Trier par prix
-                </option>
+            <form method="get" action="{{ route('products') }}">
+            <select name ="sortBy">
+
                 <option value="name">
                     Trier par nom
                 </option>
+                <option value="price">
+                    Trier par prix
+                </option>
             </select>
             <input type="submit" value="Valider">
+            </form>
 
             <ul>
                 @foreach($products as $product)

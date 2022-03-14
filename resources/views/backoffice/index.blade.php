@@ -8,7 +8,7 @@
 
 
 
-    <table>
+    <table class="table  table-striped">
         <thead>
         <tr>
             <th>Nom du produit</th>
@@ -33,6 +33,7 @@
         </tbody>
 
     </table>
+
     <h3>Ajouter une formation</h3>
 
     <a href="{{ route("backoffice.create") }}">Créer une formation</a>

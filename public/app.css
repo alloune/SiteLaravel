@@ -3,6 +3,7 @@ body{
     color: orange;
     position: relative;
     top: 70px;
+    height: 100%;
 }
 .teacherBlock{
     width: 100%;
@@ -18,9 +19,7 @@ footer{
     font-family: "Open Sans", sans-serif;
     color: white;
     background-color: #83B6D1;
-    position: relative;
-    width: 100%;
-    bottom: 0;
+
 }
 .firstPartFoot{
     display: flex;
@@ -44,7 +43,6 @@ footer ul{
 }
 .productInfo{
     display: flex;
-
     margin-left: 260px;
     margin-right: 260px;
     text-align: left;
@@ -62,3 +60,4 @@ footer ul{
     margin-bottom: 20px;
     left: 110px;
 }
+

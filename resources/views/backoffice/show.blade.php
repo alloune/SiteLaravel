@@ -4,31 +4,27 @@
 
 @section('content')
 
+    <div class="card mb-3" style="max-width: 1240px;">
+        <div class="row g-2">
+            <div class="col-md-4">
+                <img src="{{ $backoffice->image }}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $backoffice->name }}</h5>
+                    <p class="card-text"> Description :{{ $backoffice->description }}</p>
+                    <p class="card-text"> Prix :{{ $backoffice->price }} €</p>
+                    <p class="card-text">Poids : {{ $backoffice->weight }} g</p>
+                    <p class="card-text">Disponible : @if($backoffice->available  == 1)Oui
+                        @else
+                    Non
+                        @endif</p>
+                    <p class="card-text">Quantité disponible : {{ $backoffice->quantity }}</p>
 
-    <h1>Rendu de la formation</h1>
-
-    <h3>Nom de la formation : </h3>
-    <p>{{ $backoffice->name }}</p>
-
-    <h3>Description : </h3>
-    <p>{{ $backoffice->description }}</p>
-
-    <h3>Image : </h3>
-    <img src="{{ $backoffice->image }}">
-
-    <h3>Prix : </h3>
-    <p>{{ $backoffice->price }} €</p>
-
-    <h3>Poids : </h3>
-    <p>{{ $backoffice->weight }}</p>
-
-    <h3>Disponible: </h3>
-    <p>{{ $backoffice->available }}</p>
-
-    <h3>Quantité : </h3>
-    <p>{{ $backoffice->quantity }}</p>
-
-
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

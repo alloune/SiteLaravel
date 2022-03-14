@@ -10,12 +10,17 @@ class UserController extends Controller
 {
 
 
-    public function index()
+    public function index(Request $request)
     {
+        $products = Products::orderBy($request->query->get('sortBy') ?? 'name', 'ASC')->get();
+//        $products = Products::orderBy('name', 'ASC')->get();
+////        if($request->query->get('sortBy') === 'price')
+////        {
+////            $products=Products::orderBy('price','ASC')->get();
+////        }
 //        $product_test = Products::where()
 //        $products = DB::select('SELECT * FROM products');
-        $products = Products::orderBy("name")->
-        get();
+
 
 
         return view('product', ['products' => $products]);

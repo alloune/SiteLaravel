@@ -10,4 +10,9 @@ class Products extends Model
     protected $fillable = ['name', 'description', 'image', 'price', 'weight', 'available', 'quantity'];
     use HasFactory;
     public $timestamps= false;
+
+
+    public function category(){
+        return $this->belongsTo('App\Models\Category');
+    }
 }
