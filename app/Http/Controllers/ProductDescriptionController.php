@@ -11,9 +11,14 @@ use App\Models\Products;
 
 class ProductDescriptionController extends Controller
 {
-    public function displayProduct(int $id): Factory|View|Application
+//    public function displayProduct(int $id): Factory|View|Application
+//    {
+//        $product = Products::find($id);
+//        return view('product_description_db', ['product' => $product]);
+//    }
+    public function displayProduct(Products $product): Factory|View|Application
     {
-        $product = Products::where('id', $id)->get();
+
         return view('product_description_db', ['product' => $product]);
     }
 

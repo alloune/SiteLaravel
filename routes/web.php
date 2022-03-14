@@ -20,4 +20,4 @@ use App\Http\Controllers\VignetteController;
 Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
 Route::get('/products', [ProductController::class, 'displayProductPage'])->name('products');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
-Route::get('/product/{id}', [ProductDescriptionController::class, 'displayProduct'])->name('product');
+Route::get('/product/{product}', [ProductDescriptionController::class, 'displayProduct'])->name('product');
