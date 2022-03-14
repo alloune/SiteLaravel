@@ -12,8 +12,6 @@ class BackofficeController extends Controller
 
     public function displayBakcOffice(): Factory|View|Application
     {
-
-
         return view('backoffice');
     }
 }

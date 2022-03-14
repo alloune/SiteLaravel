@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackofficeProductController;
 use App\Http\Controllers\ProductDescriptionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -23,4 +24,4 @@ Route::get('/products', [ProductController::class, 'displayProductPage'])->name(
 Route::get('/products/by_price', [ProductController::class, 'sortProducts'])->name('sortedproducts');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
 Route::get('/product/{product}', [ProductDescriptionController::class, 'displayProduct'])->name('product');
-route::get('/backoffice',[BackofficeController::class, 'displayBakcOffice'])->name("backoffice");
+route::get('/backoffice',[BackofficeProductController::class, 'displayBakcOfficeProducts'])->name("backoffice");
