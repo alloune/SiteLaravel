@@ -17,17 +17,18 @@
             <tbody>
             <tr>
 {{--                @dump($order->product)--}}
-                <p>TEST</p>
-{{--                @dd($order)--}}
-                @if(count($order->product)==0)
+
+
+                @if(count($order->products)==0)
                     <p style="font-style: italic">Cette commande n'a plus d'article</p>
                 @else
-                @foreach($order->product as $product)
+                @foreach($order->products as $product)
+{{--                    @dd($product->pivot->quantity)--}}
 
 
 
                 <td>{{ $product->name }}</td>
-                <td>{{ $product->quantity }}</td>
+                <td>{{ $product->pivot->quantity }}</td>
                 <td>{{ $product->price }}</td>
             </tr>
             @endforeach
