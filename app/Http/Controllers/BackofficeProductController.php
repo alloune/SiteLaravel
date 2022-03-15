@@ -24,9 +24,8 @@ class BackofficeProductController extends Controller
         return view('Backoffice.backoffice_product', ['product' => $product]);
     }
 
-    public function editBakcOfficeProduct(Products $product, Request $request): Factory|View|Application
+    public function editBakcOfficeProduct(Products $product): Factory|View|Application
     {
-
 
         return view('Backoffice.backoffice_product_edit', ['product' => $product]);
     }
@@ -44,6 +43,31 @@ class BackofficeProductController extends Controller
             'available' => $request->input('available'),
             'quantity' => $request->input('quantity'),
             ]);
+
         return redirect()->route("backofficeproducts");
     }
+
+    public function showAddBackOfficeProduct(Products $product): Application|Factory|View
+    {
+
+        return view("Backoffice.backoffice_product_add", ['product' => $product]);
+    }
+
+    public function addBackOfficeProduct(Request $request, Products $product)
+    {
+        $product->create([
+            'name' => $request->input('name'),
+            'category_id' => $request->input('category_id'),
+            'price' => $request->input('price'),
+            'description' => $request->input('description'),
+            'image' => $request->input('image'),
+            'weight' => $request->input('weight'),
+            'available' => $request->input('available'),
+            'quantity' => $request->input('quantity'),
+        ]);
+
+        return redirect()->route("backofficeproducts");
+    }
+
+
 }

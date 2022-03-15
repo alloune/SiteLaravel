@@ -33,7 +33,7 @@
 
     </table>
 
-    <button type="button" class="btn btn-success">Add product</button>
+    <a href="{{ route('backofficeproductadd') }}"><button type="button" class="btn btn-success">Add product</button></a>
 
 
 
