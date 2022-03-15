@@ -14,13 +14,19 @@
         </thead>
         @foreach($products as $key => $list)
         <tbody>
-        <tr>
+        <tr
+            @if($list->quantity === 0)
+            class="bg-danger"
+            @endif>
             <th scope="row">{{ $list->id }}</th>
             <td>{{ $list->name }}</td>
             <td>{{ $list->description }}</td>
             <td>{{ $list->price }} €</td>
             <td>{{ $list->quantity }}</td>
-            <td>
+            <td
+                @if($list->quantity === 0)
+                class="bg-white"
+                @endif>
                 <a href="{{ route('backofficeproduct', $list->id) }}"> <button type="button" class="btn btn-primary">View</button></a>
                 <a href="{{ route('backofficeproductedit', $list->id) }}"><button type="button" class="btn btn-primary">Update</button></a>
 

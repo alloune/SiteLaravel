@@ -6,6 +6,7 @@
         <form class="one_product" method="post" action="{{ route('backofficeproductupdate', ['product'=>$product->id]) }}">
             @csrf
             @method('PUT')
+
         <div class="product_description">
             <img src="{{ $product->image }}" alt="{{ $product->name }}" class="img-thumbnail">
         </div>
@@ -17,7 +18,7 @@
             <label>Prix:</label>
             <input type="text" name="price" value="{{ $product->price }}">
             <label>Description:</label>
-            <textarea type="text" name="description" value="{{ $product->description }}"></textarea>
+            <textarea name="description">{{ $product->description }}</textarea>
             <label>Image:</label>
             <input type="text" name="image" value="{{ $product->image }}">
             <label>Poid:</label>
