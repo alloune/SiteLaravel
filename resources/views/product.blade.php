@@ -1,8 +1,7 @@
 @extends('layouts.app')
-
-
-
-
+@section('title')
+    <title>Products</title>
+@endsection
 @section('content')
 
     @foreach ($products as $product)
@@ -13,4 +12,10 @@
 
     @endforeach
 
+    <div class="resume">
+        <img src="#" alt="Image de présentation">
+        <p>Présentation de la formation, le prix</p>
+        <p> Petit cadre pour presenter l'école</p>
+    </div>
+    </div>
 @endsection

@@ -4,7 +4,6 @@ use App\Http\Controllers\BackofficeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
