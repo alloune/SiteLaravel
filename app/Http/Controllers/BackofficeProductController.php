@@ -53,7 +53,7 @@ class BackofficeProductController extends Controller
         return view("Backoffice.backoffice_product_add", ['product' => $product]);
     }
 
-    public function addBackOfficeProduct(Request $request, Products $product)
+    public function addBackOfficeProduct(Request $request, Products $product): RedirectResponse
     {
         $product->create([
             'name' => $request->input('name'),
@@ -67,6 +67,13 @@ class BackofficeProductController extends Controller
         ]);
 
         return redirect()->route("backofficeproducts");
+    }
+
+    public function deleteBackOfficeProduct(Products $product): RedirectResponse
+    {
+        $product->delete();
+
+        return redirect()->route('backofficeproducts');
     }
 
 

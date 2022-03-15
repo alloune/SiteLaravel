@@ -24,8 +24,9 @@ Route::get('/products/by_price', [ProductController::class, 'sortProducts'])->na
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage' ])->name('aboutus');
 Route::get('/product/{product}', [ProductDescriptionController::class, 'displayProduct'])->name('product');
 Route::get('/backoffice',[BackofficeProductController::class, 'displayBakcOfficeProducts'])->name("backofficeproducts");
+Route::delete('/backoffice/{product}',[BackofficeProductController::class, 'deleteBackOfficeProduct'])->name("backofficeproductsdelete");
 Route::get('/backoffice/product/create',[BackofficeProductController::class, 'showAddBackOfficeProduct'])->name("backofficeproductadd");
-Route::put('/backoffice/product/create',[BackofficeProductController::class, 'addBackOfficeProduct'])->name("backofficeproductadd");
+Route::post('/backoffice/product/create',[BackofficeProductController::class, 'addBackOfficeProduct'])->name("backofficeproductadd");
 Route::get('/backoffice/product/{product}',[BackofficeProductController::class, 'displayBakcOfficeProduct'])->name("backofficeproduct");
 Route::get('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'editBakcOfficeProduct'])->name("backofficeproductedit");
 Route::put('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'updateBackOfficeProduct'])->name("backofficeproductupdate");

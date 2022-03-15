@@ -8,7 +8,6 @@
     <div class="one_product">
         <form class="one_product" method="post" action="{{ route('backofficeproductadd', ['product'=>$product->id]) }}">
             @csrf
-            @method('PUT')
 
         <div class="product_description">
             <label>Nom du produit:</label>
