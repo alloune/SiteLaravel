@@ -7,7 +7,7 @@
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>PRICE</th>
+                    <th>PRICE</th>..q
                     <th>QUANTITY</th>
                 </tr>
             </thead>
