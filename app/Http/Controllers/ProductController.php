@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     public function displayProductPage(){
-        $products = Products::get();
+        $products = Products::all();
 
         return view('product', ['products' => $products]);
 
@@ -38,6 +38,7 @@ class ProductController extends Controller
         return view('product', ['products' => $products]);
 
     }
+
 
 }
 
