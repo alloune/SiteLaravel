@@ -50,7 +50,10 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $total = 0;
+        foreach ($order->products as $product){
 
+        }
         return view('backoffice.orders.show', compact('order'));
     }
 

@@ -29,9 +29,16 @@
 
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->pivot->quantity }}</td>
-                <td>{{ $product->price }}</td>
+                <td>{{ $product->price }} €</td>
             </tr>
+            @
             @endforeach
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Total</td>
+                <td></td>
+            </tr>
             @endif
             </tbody>
 
