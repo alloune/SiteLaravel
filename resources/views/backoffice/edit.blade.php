@@ -1,11 +1,9 @@
-@extends('layouts.app')
+@extends('backoffice.layout.index')
 
 @section('title', 'BackOffice --  Graduate')
 
 @section('content')
 
-
-    <h1>Mise à jour de la formation</h1>
     <form method="POST" action="{{ route("backoffice.update", $backoffice) }}">
         {{--update d'une formation existante--}}
         @method("PUT")
@@ -13,7 +11,7 @@
 <div class="container">
     <div class="row">
         <tr>
-            <td>Image</td>
+
             <td><img style="width: 200px" src="{{ $backoffice->image }}"></td>
             <td><input type="texte" value="{{ $backoffice->image }}" name="image"></td>
         </tr>

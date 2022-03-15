@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('backoffice.layout.index')
+@section('title', 'Tous les produits')
 
-@section('title', 'BackOffice --  Graduate')
+
 
 @section('content')
 
-    <h1>Bienvenue sur la page de gestion de base de données</h1>
+
 
 
 
@@ -12,7 +13,7 @@
         <thead>
         <tr>
             <th>Nom du produit</th>
-            <th colspan="3">Action</th>
+            <th colspan="2">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -20,13 +21,18 @@
 
             <tr>
                 <td>{{ $product->name }}</td>
-                <td><a href="{{ route('backoffice.show', ['backoffice'=>$product]) }}">Voir</a></td>
-                <td><a href="{{ route('backoffice.edit', ['backoffice'=>$product]) }}">Modifier</a></td>
-                <td><form method="Post" action="{{ route('backoffice.destroy', ['backoffice'=>$product->id]) }}">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="Supprimer">
-                    </form>
+                <td>
+                    <a class="btn btn-light" href="{{ route('backoffice.show', ['backoffice'=>$product]) }}">Voir</a>
+                    <a class="btn btn-light"
+                       href="{{ route('backoffice.edit', ['backoffice'=>$product]) }}">Modifier</a>
+                </td>
+                <td>
+                    <form method="Post" action="{{ route('backoffice.destroy', ['backoffice'=>$product->id]) }}">
+
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="Supprimer">
+                </form>
                 </td>
             </tr>
         @endforeach
@@ -34,8 +40,9 @@
 
     </table>
 
-    <h3>Ajouter une formation</h3>
 
-    <a href="{{ route("backoffice.create") }}">Créer une formation</a>
+    <button type="button" class="btn btn-primary btn-lg"><a style="text-decoration: none; color:white;"
+                                                            href="{{ route("backoffice.create") }}">Créer une
+            formation</a></button>
 @endsection
 

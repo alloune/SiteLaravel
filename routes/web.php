@@ -6,6 +6,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\VignetteController;
 use App\Http\Controllers\UniversitiesLogoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,5 @@ Route::get('/products', [UserController::class, 'index'])->name('products');
 Route::get('/product/{id}', [UserController::class, 'displayProduct'])->name('product');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage'])->name('aboutus');
 Route::resource('/backoffice', ProductController::class);
+Route::resource('/backoffice/order', OrderController::class);
 

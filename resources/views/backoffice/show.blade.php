@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('backoffice.layout.index')
 
-@section('title', 'BackOffice --  Graduate')
+@section('title', 'BackOffice --  Show')
 
 @section('content')
 

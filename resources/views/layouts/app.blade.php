@@ -20,7 +20,7 @@
 @include('layouts.navbar')
 @yield('content')
 
-<footer class="fixed-bottom">
+<footer>
     <div class="firstPartFoot">
         <div class="listFooterGraduate">
             <h3>Graduate</h3>

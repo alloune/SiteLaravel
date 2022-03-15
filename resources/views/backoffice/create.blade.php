@@ -1,13 +1,12 @@
-@extends('layouts.app')
+@extends('backoffice.layout.index')
 
-@section('title', 'BackOffice --  Graduate')
+@section('title', 'Creation')
 
 @section('content')
 
 
-    <h1>Mise à jour de la formation</h1>
 
-    {{--    creation d'une nouvelle formation--}}
+
     <form method="POST" action="{{ route('backoffice.store') }}">
 
         @csrf
