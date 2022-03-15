@@ -15,8 +15,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $allOrders=Order::all();
-//        return view(route(back))
+        $orders=Order::all();
+
+
+        return view('backoffice.orders.index', compact('orders'));
     }
 
     /**
@@ -48,7 +50,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+
+        return view('backoffice.orders.show', compact('order'));
     }
 
     /**

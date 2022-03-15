@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Products::all();
-        return view("backoffice.index", compact("products"));
+        return view("backoffice.Products.index", compact("products"));
     }
 
     /**
@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('backoffice.create');
+        return view('backoffice.Products.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class ProductController extends Controller
             "available"=>$request->input('available'),
             "quantity"=>$request->input("quantity")
         ]);
-        return redirect(route('backoffice.index'));
+        return redirect(route('backoffice.Products.index'));
 
 
     }
@@ -60,7 +60,7 @@ class ProductController extends Controller
         //ATTENTION !!! Le nom de la variable doit être identique au nom dans la route
     {
 
-        return view('backoffice.show', compact("backoffice"));
+        return view('backoffice.Products.show', compact("backoffice"));
     }
 
     /**
@@ -71,7 +71,7 @@ class ProductController extends Controller
      */
     public function edit(Products $backoffice)
     {
-        return view('backoffice.edit', compact("backoffice"));
+        return view('backoffice.Products.edit', compact("backoffice"));
     }
 
     /**
@@ -92,7 +92,7 @@ class ProductController extends Controller
             "available"=>$request->input('available'),
             "quantity"=>$request->input("quantity")
         ]);
-        return redirect()->route("backoffice.show", ['backoffice'=> $backoffice->id]);
+        return redirect()->route("backoffice.Products.show", ['backoffice'=> $backoffice->id]);
     }
 
     /**
@@ -104,6 +104,6 @@ class ProductController extends Controller
     public function destroy(Products $backoffice)
     {
         $backoffice->delete();
-        return redirect(route('backoffice.index'));
+        return redirect(route('backoffice.Products.index'));
     }
 }
