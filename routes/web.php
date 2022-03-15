@@ -26,3 +26,4 @@ Route::get('/product/{product}', [ProductDescriptionController::class, 'displayP
 Route::get('/backoffice',[BackofficeProductController::class, 'displayBakcOfficeProducts'])->name("backofficeproducts");
 Route::get('/backoffice/product/{product}',[BackofficeProductController::class, 'displayBakcOfficeProduct'])->name("backofficeproduct");
 Route::get('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'editBakcOfficeProduct'])->name("backofficeproductedit");
+Route::put('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'updateBackOfficeProduct'])->name("backofficeproductupdate");

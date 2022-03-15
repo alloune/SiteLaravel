@@ -3,21 +3,32 @@
 @section('content')
 
     <div class="one_product">
-
+        <form class="one_product" method="post" action="{{ route('backofficeproductupdate', ['product'=>$product->id]) }}">
+            @csrf
+            @method('PUT')
         <div class="product_description">
             <img src="{{ $product->image }}" alt="{{ $product->name }}" class="img-thumbnail">
         </div>
         <div class="product_description">
-            <p>Le produit: {{ $product->name }}</p>
-            <p>categorie: {{ $product->category_id }}</p>
-            <p>Prix: {{ $product->price }} €</p>
-            <p>Description: {{ $product->description }}</p>
-            <p>Image: {{ $product->image }}</p>
-            <p>Poid: {{ $product->weight }} g</p>
-            <p>En vente: {{ $product->available }}</p>
-            <p>Quantité: {{ $product->quantity }}</p>
-            <button type="button" class="btn btn-primary">Update</button>
+            <label>Nom du produit:</label>
+            <input type="text" name="name" value="{{ $product->name }}">
+            <label>Categorie:</label>
+            <input type="text" name="category_id" value="{{ $product->category_id }}">
+            <label>Prix:</label>
+            <input type="text" name="price" value="{{ $product->price }}">
+            <label>Description:</label>
+            <textarea type="text" name="description" value="{{ $product->description }}"></textarea>
+            <label>Image:</label>
+            <input type="text" name="image" value="{{ $product->image }}">
+            <label>Poid:</label>
+            <input type="text" name="weight" value="{{ $product->weight }}">
+            <label>En vente:</label>
+            <input type="text" name="available" value="{{ $product->available }}">
+            <label>Quantité disponible:</label>
+            <input type="text" name="quantity" value="{{ $product->quantity }}">
+            <button type="submit" class="btn btn-primary">Update</button>
         </div>
+        </form>
     </div>
 
 
