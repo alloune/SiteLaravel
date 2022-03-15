@@ -61,7 +61,7 @@ class BackofficeController extends Controller
      */
     public function edit(Backoffice $backoffice)
     {
-        //
+        return view('edit');
     }
 
     /**

@@ -19,7 +19,7 @@
                 <td>{{$product->price}}</td>
                 <td>{{$product->quantity}}</td>
                  <th><a href="{{ route("displayProductDetailPage",['id'=>$product->id])}}"><button type="button" class="btn btn-info">voir</button></a></th>
-                 <th><button type="button" class="btn btn-success">modifier</button></th>
+                 <th><a href="{{ route("edit",['id'=>$product->id])}}"> <button type="button" class="btn btn-success">modifier</button></a></th>
                  <th><button type="button" class="btn btn-danger">supprimer</button>
                  </th>
 
