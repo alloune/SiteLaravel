@@ -65,3 +65,8 @@ footer ul{
     display: flex;
     flex-direction: column;
 }
+.actionBtn{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}

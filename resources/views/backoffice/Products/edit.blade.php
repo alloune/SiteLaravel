@@ -5,6 +5,14 @@
 @section('content')
 
     <form method="POST" action="{{ route("backoffice.update", $backoffice) }}">
+        @if($errors->any())
+            <div class="errorDisplay">
+
+                @foreach($errors->all() as $error)
+                    <div style="color: red">Oups ! {{ $error }}</div>
+                @endforeach
+            </div>
+        @endif
         {{--update d'une formation existante--}}
         @method("PUT")
         @csrf

@@ -27,17 +27,25 @@
 
             <ul>
                 @foreach($products as $product)
-                    <form action="{{route('product',$product->id) }}" method="GET">
+
                         <li>
 
                             <p>{{ $product->name }}</p>
                             <img src="{{ $product->image }}">
                             <p>Prix : {{ $product->price }} €</p>
+                            <div class="actionBtn">
+                            <form action="{{route('product',$product->id) }}" method="GET">
                             <input type="hidden" name="id" value="{{ $product->id }}">
-                            <input type="submit" value="Voir les infos">
+                            <input class="btn btn-dark" type="submit" value="Voir les infos">
+                            </form>
+                            <form action="#" method="GET">
+                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                <input class="btn btn-dark" type="submit" value="Ajouter au panier">
+                            </form>
+                            </div>
 
                         </li>
-                    </form>
+
 
                 @endforeach
             </ul>

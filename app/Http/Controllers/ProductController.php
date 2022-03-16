@@ -92,6 +92,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Products $backoffice)
     {
+        $request->validate([
+            "name" =>'required|max:44',
+            "image" => 'required|max:255',
+            "price" => 'required|integer|not_in:0',
+            "available" => 'required|integer|max:1',
+            "quantity" => 'required|integer|max:9999'
+        ]);
+
         $backoffice->update([
             "name" => $request->input("name"),
             "description" => $request->input("description"),
@@ -101,7 +109,7 @@ class ProductController extends Controller
             "available" => $request->input('available'),
             "quantity" => $request->input("quantity")
         ]);
-        return redirect()->route("backoffice.Products.show", ['backoffice' => $backoffice->id]);
+        return redirect()->route("backoffice.show", ['backoffice' => $backoffice->id]);
     }
 
     /**
