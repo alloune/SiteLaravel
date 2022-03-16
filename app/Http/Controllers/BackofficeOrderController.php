@@ -7,7 +7,6 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Order;
-use App\Models\Customers;
 use Illuminate\Http\Response;
 
 class BackofficeOrderController extends Controller

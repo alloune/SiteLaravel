@@ -7,14 +7,14 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Products;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function displayProductPage(): Factory|View|Application
     {
 
-        $products = Products::get();
+        $products = Product::get();
 
         return view('product_db', ['products' => $products]);
 
@@ -22,9 +22,9 @@ class ProductController extends Controller
 
     public function sortProducts(Request $request): Factory|View|Application
     {
-        $products = Products::orderBy('name', 'ASC')->get();
+        $products = Product::orderBy('name', 'ASC')->get();
         if ($request->query->get('products') === 'price') {
-            $products = Products::orderBy('price', 'ASC')->get();
+            $products = Product::orderBy('price', 'ASC')->get();
         }
         return view('product_db', ['products' => $products]);
     }

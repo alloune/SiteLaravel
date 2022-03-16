@@ -32,4 +32,5 @@ Route::get('/backoffice/product/{product}',[BackofficeProductController::class, 
 Route::get('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'editBakcOfficeProduct'])->name("backofficeproductedit");
 Route::put('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'updateBackOfficeProduct'])->name("backofficeproductupdate");
 Route::prefix('backoffice')->group(function () {
-Route::resource('/order', BackofficeOrderController::class);});
+    Route::resource('/order', BackofficeOrderController::class);
+});

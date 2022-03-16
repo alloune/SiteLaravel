@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -14,23 +14,23 @@ class BackofficeProductController extends Controller
 
     public function displayBakcOfficeProducts(): Factory|View|Application
     {
-        $products = Products::orderBy('name', 'ASC')->get();
+        $products = Product::orderBy('name', 'ASC')->get();
         return view('Backoffice.backoffice', ['products' => $products]);
     }
 
-    public function displayBakcOfficeProduct(Products $product): Factory|View|Application
+    public function displayBakcOfficeProduct(Product $product): Factory|View|Application
     {
 
         return view('Backoffice.backoffice_product', ['product' => $product]);
     }
 
-    public function editBakcOfficeProduct(Products $product): Factory|View|Application
+    public function editBakcOfficeProduct(Product $product): Factory|View|Application
     {
 
         return view('Backoffice.backoffice_product_edit', ['product' => $product]);
     }
 
-    public function updateBackOfficeProduct(Request $request, Products $product): RedirectResponse
+    public function updateBackOfficeProduct(Request $request, Product $product): RedirectResponse
     {
 
         $product->update([
@@ -42,18 +42,18 @@ class BackofficeProductController extends Controller
             'weight' => $request->input('weight'),
             'available' => $request->input('available'),
             'quantity' => $request->input('quantity'),
-            ]);
+        ]);
 
         return redirect()->route("backofficeproducts");
     }
 
-    public function showAddBackOfficeProduct(Products $product): Application|Factory|View
+    public function showAddBackOfficeProduct(Product $product): Application|Factory|View
     {
 
         return view("Backoffice.backoffice_product_add", ['product' => $product]);
     }
 
-    public function addBackOfficeProduct(Request $request, Products $product): RedirectResponse
+    public function addBackOfficeProduct(Request $request, Product $product): RedirectResponse
     {
         $product->create([
             'name' => $request->input('name'),
@@ -69,7 +69,7 @@ class BackofficeProductController extends Controller
         return redirect()->route("backofficeproducts");
     }
 
-    public function deleteBackOfficeProduct(Products $product): RedirectResponse
+    public function deleteBackOfficeProduct(Product $product): RedirectResponse
     {
         $product->delete();
 
