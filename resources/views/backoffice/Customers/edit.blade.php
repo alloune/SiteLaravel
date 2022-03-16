@@ -4,72 +4,46 @@
 
 @section('content')
 
-    <form method="POST" action="{{ route("backoffice.update", $backoffice) }}">
+    @if($errors->any())
+        <div class="errorDisplay">
+
+            @foreach($errors->all() as $error)
+                <div style="color: red">Oups ! {{ $error }}</div>
+            @endforeach
+        </div>
+    @endif
+
+
+    <form method="POST" action="{{ route("customers.update", $customer) }}">
         {{--update d'une formation existante--}}
         @method("PUT")
         @csrf
 <div class="container">
     <div class="row">
-        <tr>
-
-            <td><img style="width: 200px" src="{{ $backoffice->image }}"></td>
-            <td><input type="texte" value="{{ $backoffice->image }}" name="image"></td>
-        </tr>
+        <p>FORMULAIRE EDITION CUSTOMER</p>
     </div>
         <table>
             <thead>
-            <tr>
-                <th></th>
-                <th>Valeur</th>
-                <th>Modification</th>
-            </tr>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Adresse</th>
+                    <th>Code postal</th>
+                    <th>Ville</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Nom</td>
-                <td>{{ $backoffice->name }}</td>
-                <td><input type="text" value="{{ $backoffice->name }}" name="name"></td>
+                <tr>
+                    <td><input type="text" name="last_name"  value="{{$customer->last_name}}"></td>
+                    <td><input type="text" name="first_name"  value="{{$customer->first_name}}"></td>
+                    <td><input type="text" name="address"  value="{{$customer->address}}"></td>
+                    <td><input type="text" name="postal_code"  value="{{$customer->postal_code}}"></td>
+                    <td><input type="text" name="city"  value="{{$customer->city}}"></td>
 
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>{{ $backoffice->description }}</td>
-                <td>
-                    <input type="textarea" value="{{ $backoffice->description }}" cols="40" rows="5"
-                           name="description"></td>
-            </tr>
 
-            <tr>
-                <td>Prix</td>
-                <td>{{ $backoffice->price }} €</td>
-                <td><input type="number" value="{{ $backoffice->price }}" name="price"></td>
-            </tr>
-            <tr>
-                <td>Poids</td>
-                <td>{{ $backoffice->weight }}</td>
-                <td><input type="text" value="{{ $backoffice->weight }}" name="weight"></td>
-            </tr>
-            <tr>
-                <td>Disponible</td>
-                <td>@if($backoffice->available==1)
-                        Oui
-                    @else
-                        Non
-                    @endif
-                </td>
-                <td><select name="available">
-                        <option value="1">Oui</option>
-                        <option value="0">Non</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Quantité</td>
-                <td>{{ $backoffice->quantity }}</td>
-                <td><input type="number" value="{{ $backoffice->quantity }}" name="quantity"></td>
-            </tr>
+
+                </tr>
             </tbody>
-
         </table>
         <input type="submit" value="Valider les changements">
 </div>

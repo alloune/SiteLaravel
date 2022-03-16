@@ -17,7 +17,6 @@ class OrderController extends Controller
     {
         $orders=Order::all();
 
-
         return view('backoffice.orders.index', compact('orders'));
     }
 

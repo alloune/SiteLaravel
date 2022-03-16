@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
+    use HasFactory;
+    protected $fillable = ['first_name', 'last_name', 'address', 'postal_code', 'city'];
+    public $timestamps= false;
     public function orders(){
         return $this->hasMany(Order::class);
     }
-    use HasFactory;
 }

@@ -27,7 +27,11 @@
                     <tbody>
                     <tr>
                         <td>Nom</td>
-                        <td><input type="text" placeholder="Nom" name="name"></td>
+                        <td><input type="text" placeholder="Nom" name="name" ></td>
+{{--                        class="@error('name') is-invalid @enderror" a mettre dans le form--}}
+{{--                        @error('name')--}}
+{{--                        <tr>{{ $error }}</tr>--}}
+{{--                        @enderror--}}
 
                     </tr>
                     <tr>

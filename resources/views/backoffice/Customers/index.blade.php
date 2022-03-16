@@ -12,22 +12,28 @@
     <table class="table  table-striped">
         <thead>
         <tr>
-            <th>Nom du produit</th>
+            <th>Nom du client</th>
+            <th>Prenom du client</th>
+            <th colspan="3">Adresse du client</th>
             <th colspan="2">Action</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($products as $product)
+        @foreach($customers as $customer)
 
             <tr>
-                <td>{{ $product->name }}</td>
+                <td>{{ $customer->first_name }}</td>
+                <td>{{ $customer->last_name }}</td>
+                <td>{{ $customer->address }}</td>
+                <td>{{ $customer->postal_code }}</td>
+                <td>{{ $customer->city }}</td>
+
                 <td>
-                    <a class="btn btn-light" href="{{ route('backoffice.show', ['backoffice'=>$product]) }}">Voir</a>
-                    <a class="btn btn-light"
-                       href="{{ route('backoffice.edit', ['backoffice'=>$product]) }}">Modifier</a>
+                    <a class="btn btn-light" href="{{ route('customers.edit', $customer) }}">Modifier</a>
+
                 </td>
                 <td>
-                    <form method="Post" action="{{ route('backoffice.destroy', ['backoffice'=>$product->id]) }}">
+                    <form method="Post" action="#">
 
                 @csrf
                 @method('DELETE')
@@ -40,9 +46,10 @@
 
     </table>
 
-
-    <button type="button" class="btn btn-primary btn-lg"><a style="text-decoration: none; color:white;"
-                                                            href="{{ route("backoffice.create") }}">Créer une
-            formation</a></button>
+<div>
+    <button type="button" class="btn btn-primary btn-lg">
+        <a style="text-decoration: none; color:white;" href="{{ route("backoffice.create") }}">Créer un nouveau client</a>
+    </button>
+</div>
 @endsection
 
