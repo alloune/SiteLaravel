@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackofficeOrderController;
 use App\Http\Controllers\BackofficeProductController;
 use App\Http\Controllers\ProductDescriptionController;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,5 @@ Route::post('/backoffice/product/create',[BackofficeProductController::class, 'a
 Route::get('/backoffice/product/{product}',[BackofficeProductController::class, 'displayBakcOfficeProduct'])->name("backofficeproduct");
 Route::get('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'editBakcOfficeProduct'])->name("backofficeproductedit");
 Route::put('/backoffice/product/edit/{product}',[BackofficeProductController::class, 'updateBackOfficeProduct'])->name("backofficeproductupdate");
+Route::prefix('backoffice')->group(function () {
+Route::resource('/order', BackofficeOrderController::class);});

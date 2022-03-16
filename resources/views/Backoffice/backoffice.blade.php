@@ -2,9 +2,19 @@
 @section('title', "Backoffice")
 @section('content')
 
+
+
     <table class="table table-hover" style="margin-top: 100px">
         <thead>
-        <tr><th scope="col"> <a href="{{ route('backofficeproductadd') }}"><button type="button" class="btn btn-success">Add product</button></a></th></tr>
+        <tr>
+            <th scope="col"> <a href="{{ route('order.index') }}"><button type="button" class="btn btn-success">View orders</button></a></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th scope="col"> <a href="{{ route('backofficeproductadd') }}"><button type="button" class="btn btn-success">Add product</button></a></th>
+            <th></th>
+        </tr>
         <tr>
             <th scope="col">id</th>
             <th scope="col">Name</th>
