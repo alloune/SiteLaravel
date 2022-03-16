@@ -3,7 +3,6 @@
 @section('content')
 
     <div class="one_product">
-
         <div class="product_description">
             <img src="{{ $product->image }}" alt="{{ $product->name }}">
         </div>

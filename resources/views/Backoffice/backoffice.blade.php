@@ -25,11 +25,9 @@
             <th scope="col">No going back</th>
         </tr>
         </thead>
-
         @foreach($products as $key => $list)
             <tbody>
             <tr class="{{ $list->quantity === 0 ? 'bg-warning': ''}}"> {{-- if condition (ternary condition --}}
-
                 <td>{{ $list->id }}</th>
                 <td>{{ $list->name }}</td>
                 <td>{{ $list->description }}</td>
@@ -47,7 +45,6 @@
                     </form>
                 </td>
             </tr>
-
             </tbody>
         @endforeach
     </table>

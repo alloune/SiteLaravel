@@ -16,7 +16,7 @@ class BackofficeOrderController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(): View|Factory|Application
     {
         $orders = Order::all();
         return view('Backoffice.backoffice_orders', ['orders' => $orders]);
@@ -47,9 +47,9 @@ class BackofficeOrderController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return Application|Factory|View
      */
-    public function show(Order $order)
+    public function show(Order $order): View|Factory|Application
     {
 //        $order = Order::find($id);
         return view('Backoffice.backoffice_order', ['order' => $order]);
