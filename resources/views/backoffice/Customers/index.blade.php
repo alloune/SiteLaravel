@@ -33,7 +33,7 @@
 
                 </td>
                 <td>
-                    <form method="Post" action="#">
+                    <form method="Post" action="{{ route('customers.destroy', $customer->id) }}">
 
                 @csrf
                 @method('DELETE')
@@ -48,7 +48,7 @@
 
 <div>
     <button type="button" class="btn btn-primary btn-lg">
-        <a style="text-decoration: none; color:white;" href="{{ route("backoffice.create") }}">Créer un nouveau client</a>
+        <a style="text-decoration: none; color:white;" href="{{ route("customers.create") }}">Créer un nouveau client</a>
     </button>
 </div>
 @endsection

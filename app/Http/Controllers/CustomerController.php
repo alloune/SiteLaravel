@@ -25,7 +25,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.Customers.create');
     }
 
     /**
@@ -36,7 +36,23 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name'=>'required|min:3|max:44',
+            'last_name'=>'required|min:3|max:44',
+            'city'=>'required|min:3|max:44',
+            'address'=>'required|max:100',
+            'postal_code'=>'required|min:5|max:5',
+        ]);
+
+        Customer::create([
+            "first_name"=>$request->input('first_name'),
+            "last_name"=>$request->input('last_name'),
+            "address"=>$request->input('address'),
+            "postal_code"=>$request->input('postal_code'),
+            "city"=>$request->input('city'),
+        ]);
+        return redirect(route('customers.index'));
+
     }
 
     /**
@@ -98,6 +114,6 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        return 'On va dire que t\'as réussit à delete ... . Customer = '.$customer->first_name;
     }
 }
