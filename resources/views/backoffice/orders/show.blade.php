@@ -31,7 +31,7 @@
                 <td>{{ $product->pivot->quantity }}</td>
                 <td>{{ $product->price }} €</td>
             </tr>
-            @
+
             @endforeach
             <tr>
                 <td></td>

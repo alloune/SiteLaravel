@@ -61,3 +61,7 @@ footer ul{
     left: 110px;
 }
 
+.errorDisplay{
+    display: flex;
+    flex-direction: column;
+}
