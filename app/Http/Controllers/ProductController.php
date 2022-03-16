@@ -40,7 +40,7 @@ class ProductController extends Controller
             $request->validate([
             "name"=>'required|unique:products|max:255',
             "image"=>'required|max:255|',
-            "price"=>'required',
+            "price"=>'required|min:0',
             "available"=>'required']);
 
 
@@ -95,7 +95,7 @@ class ProductController extends Controller
         $request->validate([
             "name" =>'required|max:44',
             "image" => 'required|max:255',
-            "price" => 'required|integer|not_in:0',
+            "price" => 'required|integer|min:0',
             "available" => 'required|integer|max:1',
             "quantity" => 'required|integer|max:9999'
         ]);
