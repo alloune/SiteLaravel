@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<div style="display: flex; justify-content: flex-start">
     <table class="table table-hover" style="margin-top: 100px">
         <thead>
         <tr>
@@ -25,23 +25,26 @@
             <td>{{ $order->date }}</td>
             <td>{{ $order->total }}</td>
             <td>{{ $order->customer->first_name }} {{ $order->customer->last_name }}</td>
-            <td style="background-color: lightgrey; font-weight: bold">Products Ordered</td>
-            <td style="background-color: lightgrey; font-weight: bold">Product Quantity</td>
         </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-hover" style="margin-top: 140px">
+        <thead>
+        <tr>
+        <th scope="col">Products Ordered</th>
+        <th scope="col">Product Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
         @foreach($order->products as $product)
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td style="background-color: lightgrey">{{ $product->name }}</td>
-                <td style="background-color: lightgrey">{{ $product->quantity }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->quantity }}</td>
             </tr>
         @endforeach
         </tbody>
     </table>
-
+</div>
 
 @endsection
