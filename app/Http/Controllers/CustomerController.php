@@ -114,6 +114,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        return 'On va dire que t\'as réussit à delete ... . Customer = '.$customer->first_name;
+        $customer->delete();
+        return redirect()->route('customers.index');
     }
 }
