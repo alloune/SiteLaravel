@@ -3,7 +3,15 @@
 @section('content')
 
 
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <div class="one_product">
         <form class="one_product" method="post" action="{{ route('backofficeproductadd', ['product'=>$product->id]) }}">
