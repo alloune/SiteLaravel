@@ -33,6 +33,17 @@ class BackofficeProductController extends Controller
     public function updateBackOfficeProduct(Request $request, Product $product): RedirectResponse
     {
 
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'category_id' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:0',
+            'description' => 'required|string',
+            'image' => 'required|url',
+            'weight' => 'required|numeric|min:0',
+            'available' => 'required|boolean',
+            'quantity' => 'required|numeric|min:0',
+        ]);
+
         $product->update([
             'name' => $request->input('name'),
             'category_id' => $request->input('category_id'),
