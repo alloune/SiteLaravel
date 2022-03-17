@@ -49,11 +49,13 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        $total = 0;
-        foreach ($order->products as $product){
 
+        $total = 0;
+
+        foreach ($order->products as $product){
+           $total+=($product->price*$product->pivot->quantity);
         }
-        return view('backoffice.orders.show', compact('order'));
+        return view('backoffice.orders.show',['order'=>$order, 'total'=>$total]);
     }
 
     /**
@@ -89,4 +91,5 @@ class OrderController extends Controller
     {
         //
     }
+
 }

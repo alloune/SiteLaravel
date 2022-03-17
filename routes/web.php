@@ -8,6 +8,7 @@ use App\Http\Controllers\UniversitiesLogoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Order_ProductController;
 
 
 /*
@@ -28,5 +29,6 @@ Route::get('/aboutus', [AboutController::class, 'aboutUsPage'])->name('aboutus')
 Route::resource('/backoffice/orders', OrderController::class);
 Route::resource('/backoffice/customers',CustomerController::class);
 Route::resource('/backoffice', ProductController::class);
+route::resource('/cart',Order_ProductController::class );
 
 

@@ -1,11 +1,7 @@
 @extends('backoffice.layout.index')
 @section('title', 'Produit')
-
-
-
 @section('content')
     <p>Commande numéro : {{ $order->number }}</p>
-
         <table>
             <thead>
             <tr>
@@ -17,36 +13,24 @@
             <tbody>
             <tr>
 {{--                @dump($order->product)--}}
-
-
                 @if(count($order->products)==0)
                     <p style="font-style: italic">Cette commande n'a plus d'article</p>
                 @else
                 @foreach($order->products as $product)
 {{--                    @dd($product->pivot->quantity)--}}
-
-
-
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->pivot->quantity }}</td>
                 <td>{{ $product->price }} €</td>
             </tr>
-
             @endforeach
             <tr>
                 <td></td>
-                <td></td>
                 <td>Total</td>
-                <td></td>
+                <td>{{ $total }} €</td>
             </tr>
             @endif
             </tbody>
 
         </table>
-
-
-
-
-
 @endsection
 

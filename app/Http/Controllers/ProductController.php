@@ -40,7 +40,7 @@ class ProductController extends Controller
             $request->validate([
             "name"=>'required|unique:products|max:255',
             "image"=>'required|max:255|',
-            "price"=>'required|min:0',
+            "price"=>'required||int|min:0',
             "available"=>'required']);
 
 
@@ -54,7 +54,7 @@ class ProductController extends Controller
             "available" => $request->input('available'),
             "quantity" => $request->input("quantity")
         ]);
-        return redirect(route('backoffice.Products.index'));
+        return redirect(route('backoffice.index'));
 
 
     }
@@ -121,6 +121,6 @@ class ProductController extends Controller
     public function destroy(Products $backoffice)
     {
         $backoffice->delete();
-        return redirect(route('backoffice.Products.index'));
+        return redirect(route('backoffice.index'));
     }
 }
