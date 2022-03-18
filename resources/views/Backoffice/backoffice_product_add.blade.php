@@ -25,7 +25,7 @@
                 <label>Prix:</label>
                 <input type="text" name="price">
                 <label>Description:</label>
-                <textarea type="text" name="description"></textarea>
+                <textarea name="description"></textarea>
                 <label>Image:</label>
                 <input type="text" name="image">
                 <label>Poid:</label>
