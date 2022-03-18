@@ -4,7 +4,6 @@
 
 
 
-    </form>
     <table class="table table-hover" style="margin-top: 100px">
         <thead>
         <tr>
@@ -14,6 +13,11 @@
             <td></td>
             <td></td>
             <td> <a href="{{ route('backofficeproductadd') }}"><button type="button" class="btn btn-success">Add product</button></a></td>
+           <td> <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-success">Log out</button>
+            </form>
+            </td>
             <th></th>
         </tr>
         <tr>
@@ -29,7 +33,7 @@
         @foreach($products as $key => $list)
             <tbody>
             <tr class="{{ $list->quantity === 0 ? 'bg-warning': ''}}"> {{-- if condition (ternary condition --}}
-                <td>{{ $list->id }}</th>
+                <td>{{ $list->id }}</td>
                 <td>{{ $list->name }}</td>
                 <td>{{ $list->description }}</td>
                 <td>{{ $list->price }} €</td>
@@ -50,12 +54,5 @@
         @endforeach
     </table>
     <a href="{{ route('backofficeproductadd') }}"><button type="button" class="btn btn-success">Add product</button></a>
-<form method="POST" action="{{ route('logout') }}">
-    @csrf
 
-    <x-dropdown-link :href="route('logout')"
-                     onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-        {{ __('Log Out') }}
-    </x-dropdown-link>
 @endsection
