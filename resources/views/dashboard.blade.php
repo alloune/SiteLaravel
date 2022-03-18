@@ -28,7 +28,7 @@
         @foreach($products as $key => $list)
             <tbody>
             <tr class="{{ $list->quantity === 0 ? 'bg-warning': ''}}"> {{-- if condition (ternary condition --}}
-                <td>{{ $list->id }}</th>
+                <td>{{ $list->id }}</td>
                 <td>{{ $list->name }}</td>
                 <td>{{ $list->description }}</td>
                 <td>{{ $list->price }} €</td>
