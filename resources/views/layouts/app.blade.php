@@ -16,40 +16,40 @@
 @include('layouts.navbar')
 @yield('content')
 
-<footer>
-    <div class="firstPartFoot">
-        <div class="listFooterGraduate">
-            <h3>Graduate</h3>
+{{--<footer>--}}
+{{--    <div class="firstPartFoot">--}}
+{{--        <div class="listFooterGraduate">--}}
+{{--            <h3>Graduate</h3>--}}
 
-            <ul>
-                <li>A propos</li>
-                <li>Ce que nous proposons</li>
-                <li>Direction</li>
-                <li>Carrières</li>
-                <li>Catalogue</li>
-                <li>Graduate Plus</li>
-                <li>Certificats professionnels</li>
+{{--            <ul>--}}
+{{--                <li>A propos</li>--}}
+{{--                <li>Ce que nous proposons</li>--}}
+{{--                <li>Direction</li>--}}
+{{--                <li>Carrières</li>--}}
+{{--                <li>Catalogue</li>--}}
+{{--                <li>Graduate Plus</li>--}}
+{{--                <li>Certificats professionnels</li>--}}
 
-            </ul>
-        </div>
-        <div class="listFooterCommunaute">
-            <h3>Communauté</h3>
+{{--            </ul>--}}
+{{--        </div>--}}
+{{--        <div class="listFooterCommunaute">--}}
+{{--            <h3>Communauté</h3>--}}
 
-            <ul>
-                <li>Étudiants</li>
-                <li>Partenaires</li>
-                <li>Développeurs</li>
-                <li>Béta testeur</li>
-                <li>Traducteurs</li>
-                <li>Blog Tech</li>
-                <li>Centre d'enseignement</li>
-            </ul>
-        </div>
-    </div>
-    <div class="favicon">
-        <p>&copy; 2022 Graduate Inc. Tous droits réservés.</p>
-    </div>
-</footer>
+{{--            <ul>--}}
+{{--                <li>Étudiants</li>--}}
+{{--                <li>Partenaires</li>--}}
+{{--                <li>Développeurs</li>--}}
+{{--                <li>Béta testeur</li>--}}
+{{--                <li>Traducteurs</li>--}}
+{{--                <li>Blog Tech</li>--}}
+{{--                <li>Centre d'enseignement</li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="favicon">--}}
+{{--        <p>&copy; 2022 Graduate Inc. Tous droits réservés.</p>--}}
+{{--    </div>--}}
+{{--</footer>--}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

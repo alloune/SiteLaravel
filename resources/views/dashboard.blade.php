@@ -4,7 +4,6 @@
 
 
 
-    </form>
     <table class="table table-hover" style="margin-top: 100px">
         <thead>
         <tr>
@@ -50,12 +49,5 @@
         @endforeach
     </table>
     <a href="{{ route('backofficeproductadd') }}"><button type="button" class="btn btn-success">Add product</button></a>
-<form method="POST" action="{{ route('logout') }}">
-    @csrf
 
-    <x-dropdown-link :href="route('logout')"
-                     onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-        {{ __('Log Out') }}
-    </x-dropdown-link>
 @endsection
