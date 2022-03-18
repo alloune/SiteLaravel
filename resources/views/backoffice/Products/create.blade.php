@@ -49,10 +49,6 @@
                         <td><input type="number" placeholder="Prix" name="price"></td>
                     </tr>
                     <tr>
-                        <td>Weight</td>
-                        <td><input type="text" placeholder="Poids (en g)" name="weight"></td>
-                    </tr>
-                    <tr>
                         <td>Disponible</td>
                         <td><select name="available">
                                 <option value="1">Oui</option>

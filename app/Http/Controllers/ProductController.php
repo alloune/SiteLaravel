@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -50,7 +51,6 @@ class ProductController extends Controller
             "description" => $request->input("description"),
             "image" => $request->input('image'),
             "price" => $request->input('price'),
-            "weight" => $request->input('weight'),
             "available" => $request->input('available'),
             "quantity" => $request->input("quantity")
         ]);
@@ -105,7 +105,6 @@ class ProductController extends Controller
             "description" => $request->input("description"),
             "image" => $request->input('image'),
             "price" => $request->input('price'),
-            "weight" => $request->input('weight'),
             "available" => $request->input('available'),
             "quantity" => $request->input("quantity")
         ]);

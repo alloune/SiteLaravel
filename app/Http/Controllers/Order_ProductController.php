@@ -103,8 +103,9 @@ $limitQuantity = $productQuantity->quantity;
      * @param  \App\Models\Order_Product  $order_Product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order_Product $order_Product)
+    public function destroy($product)
     {
-        //
+        Order_Product::where('product_id', $product)->where('order_id',1)->delete();
+        return back();
     }
 }

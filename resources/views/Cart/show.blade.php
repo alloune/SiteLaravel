@@ -14,7 +14,6 @@
                     <h5 class="card-title">{{ $backoffice->name }}</h5>
                     <p class="card-text"> Description :{{ $backoffice->description }}</p>
                     <p class="card-text"> Prix :{{ $backoffice->price }} €</p>
-                    <p class="card-text">Poids : {{ $backoffice->weight }} g</p>
                     <p class="card-text">Disponible : @if($backoffice->available  == 1)Oui
                         @else
                     Non

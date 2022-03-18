@@ -8,10 +8,9 @@
     <h1>VOTRE PANIER EST VIDE</h1>
     @endif
 
-    <form method="POST" action="#">
+
         {{--update d'une formation existante--}}
-        @method("PUT")
-        @csrf
+
 <div class="container">
     <div class="row">
         <p>Voici votre panier !</p>
@@ -25,25 +24,27 @@
                 </tr>
             </thead>
             <tbody>
+<form method="post" action="#">
             @foreach($order->products as $product)
 
                 <tr>
                     <td>{{ $product->name }}</td>
-                    <td>{{ $product->pivot->quantity }}</td>
+                    <td><input type="number" value="{{ $product->pivot->quantity }}"></td>
                     <td>{{ $product->price }} €</td>
-
-
-
-
+                    <form action="{{ route('cart.destroy', $product) }}" method="post">
+                        @csrf
+                        @method('delete')
+                    <td><button class="btn btn-dark" type="submit">Supprimer</button> </td>
+                    </form>
                 </tr>
-
-            @endforeach
+                            @endforeach
 
             </tbody>
         </table>
         <input type="submit" value="Valider les changements">
-</div>
     </form>
+</div>
+
 
 
 

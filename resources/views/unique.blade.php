@@ -11,7 +11,6 @@
             <h1>{{ $product->name }}</h1>
             <img src="{{ $product->image }}">
             <p>Prix : {{ $product->price }} €</p>
-            <p>Weight : {{ $product->price }}</p>
         </div>
         <div class="productDesc">
             <p>{{ $product->description }}</p>

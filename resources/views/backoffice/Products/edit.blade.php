@@ -53,11 +53,6 @@
                 <td><input type="number" value="{{ $backoffice->price }}" name="price"></td>
             </tr>
             <tr>
-                <td>Poids</td>
-                <td>{{ $backoffice->weight }}</td>
-                <td><input type="text" value="{{ $backoffice->weight }}" name="weight"></td>
-            </tr>
-            <tr>
                 <td>Disponible</td>
                 <td>@if($backoffice->available==1)
                         Oui

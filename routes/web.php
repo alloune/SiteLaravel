@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Order_ProductController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -29,6 +30,6 @@ Route::get('/aboutus', [AboutController::class, 'aboutUsPage'])->name('aboutus')
 Route::resource('/backoffice/orders', OrderController::class);
 Route::resource('/backoffice/customers',CustomerController::class);
 Route::resource('/backoffice', ProductController::class);
-route::resource('/cart',Order_ProductController::class );
-
+Route::resource('/cart',Order_ProductController::class );
+//Route::get('connexion', 'AdminController@showLoginForm')->name('login');
 
