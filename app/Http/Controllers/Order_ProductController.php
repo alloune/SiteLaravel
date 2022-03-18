@@ -40,11 +40,13 @@ class Order_ProductController extends Controller
      */
     public function store(Request $request)
     {
+$productQuantity=Products::find($request->product_id);
+$limitQuantity = $productQuantity->quantity;
 
         $request->validate([
             'product_id'=>'required|integer',
             'order_id'=>'required',
-            'quantity'=>'required'
+            "quantity"=>"required|integer|min:0|max:$limitQuantity"
         ]);
 
         Order_Product::create([

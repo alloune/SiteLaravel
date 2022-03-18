@@ -2,7 +2,14 @@
 @section('title', 'Products')
 @section('content')
 
+    @if($errors->any())
+        <div class="errorDisplay">
 
+            @foreach($errors->all() as $error)
+                <div style="color: red">Oups ! {{ $error }}</div>
+            @endforeach
+        </div>
+    @endif
     <div class="teacherBlock">
         <h2>Bienvenue sur le catalogue</h2>
         <p>Merci de choisir votre nom || Voir comment le garder avec la session</p>
