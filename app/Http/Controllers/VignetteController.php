@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class VignetteController extends Controller
 {
-    private $listLogo = [
+    private $logo = [
         "harvard" => [
             "logo" => "harvard_logo.jpg"],
         "mit" => [
@@ -22,6 +22,7 @@ class VignetteController extends Controller
 
     public function displayCertif()
     {
-        return view('welcome_testa', ['listLogo' => $this->listLogo]);
+
+        return view('welcome_testa', ['listLogo' =>$this->logo]);
     }
 }
