@@ -44,3 +44,4 @@ Route::put('/backoffice/product/edit/{product}',[BackofficeProductController::cl
 Route::prefix('backoffice')->group(function () {
     Route::resource('/order', BackofficeOrderController::class)->middleware(['auth']);
 });
+Route::get('/search/', [ProductController::class, 'search'])->name('search');
