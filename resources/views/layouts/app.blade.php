@@ -16,7 +16,7 @@
 <body>
 @include('layouts.navbar')
 
-@include('layouts.Buttons')
+{{--@include('layouts.Buttons')--}}
 
 @yield('content')
 

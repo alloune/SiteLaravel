@@ -2,12 +2,17 @@
 
 
 @section('content')
+    <br>
+    <br>
+
+    <a href="{{ route("add")}}"><button type="button" class="btn btn-secondary">ajouter</button></a>
+
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>PRICE</th>..q
+                    <th>PRICE</th>
                     <th>QUANTITY</th>
                 </tr>
             </thead>
@@ -20,8 +25,13 @@
                 <td>{{$product->quantity}}</td>
                  <th><a href="{{ route("displayProductDetailPage",['id'=>$product->id])}}"><button type="button" class="btn btn-info">voir</button></a></th>
                  <th><a href="{{ route("edit",['id'=>$product->id])}}"> <button type="button" class="btn btn-success">modifier</button></a></th>
-                 <th><button type="button" class="btn btn-danger">supprimer</button>
+                 <form  action="/backoffice/product/{{$product->id}}/delete" method="post">
+                     @method('delete')
+                         @csrf
+                     <th><a href="{{ route("delete",['id'=>$product->id])}}"><button type="submit" class="btn btn-danger">supprimer</button></a></th>
+                    </form>
                  </th>
+
 
             </tr>
 

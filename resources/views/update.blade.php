@@ -1,13 +1,17 @@
 @extends('layouts.app')
-<br>
-<br>
 
-<div class="text-center">
-    <img src="{{$product->img}}" class="rounded" alt="{{$product->name}}">
-</div>
-<form  action="/backoffice/product/{{$product->id}}/update" method="post">
+@section('content')
 
-    @csrf
+    <br>
+    <br>
+
+    <div class="text-center">
+        <img src="{{$product->img}}" class="rounded" alt="{{$product->name}}">
+    </div>
+
+    <form  action="/backoffice/product/{{$product->id}}/update" method="post">
+
+        @csrf
 
         <legend>Modifier produit</legend>
 
@@ -21,4 +25,6 @@
         </div>
         <button type="submit" class="btn btn-primary">modifer</button>
 
-</form>
+    </form>
+
+@endsection

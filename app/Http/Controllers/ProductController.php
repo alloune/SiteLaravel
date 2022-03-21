@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public function displayProductPage(){
-        $products = Products::all();
+        $products = Product::all();
 
         return view('product', ['products' => $products]);
 
     }
 
     public function displayProductDetailPage($id){
-        $product = Products::find($id);
-//        $product = Products::select('select * from products where id = ?', [$id]);
+
+        $product = Product::find($id);
+
 
         return view('detailProduct', ['product' => $product]);
 
@@ -25,7 +26,7 @@ class ProductController extends Controller
 
     public function alphabetiqueProducts(){
 
-        $products = Products::orderBy('name', 'ASC')->get();
+        $products = Product::orderBy('name', 'ASC')->get();
 
         return view('product', ['products' => $products]);
 
@@ -33,7 +34,7 @@ class ProductController extends Controller
 
     public function numOrderProducts(){
 
-        $products = Products::orderBy('price', 'ASC')->get();
+        $products = Product::orderBy('price', 'ASC')->get();
 
         return view('product', ['products' => $products]);
 

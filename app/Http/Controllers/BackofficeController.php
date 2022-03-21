@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Backoffice;
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
+
 
 class BackofficeController extends Controller
 
@@ -16,8 +16,8 @@ class BackofficeController extends Controller
      */
     public function index()
     {
-        $products = Products::all();
 
+        $products = Product::all();
         return view('backoffice', ['products' => $products]);
     }
 
@@ -26,9 +26,11 @@ class BackofficeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add (Request $request )
     {
 
+
+        return view('add');
     }
 
     /**
@@ -37,9 +39,20 @@ class BackofficeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function creat (Request $request)
     {
-        //
+        Product::create([
+            "title" => $request->title,
+            "name" => $request->name,
+            "summary" => $request->summary,
+            "price" => $request->price,
+            "discount" => $request->discount,
+            "img" => $request->img,
+            "quantity" => $request->quantity,
+            "categorie" => $request->categorie,
+            "available" => $request->available,]);
+        $products = Product::all();
+        return view('backoffice',['products' => $products]);
     }
 
     /**
@@ -59,9 +72,10 @@ class BackofficeController extends Controller
      * @param  \App\Models\Backoffice  $backoffice
      * @return \Illuminate\Http\Response
      */
-    public function edit(Backoffice $backoffice)
-    {
-        return view('edit');
+    public function edit($id){
+     $product = Product::find($id);
+
+        return view('edit', ['product' => $product]);
     }
 
     /**
@@ -71,9 +85,15 @@ class BackofficeController extends Controller
      * @param  \App\Models\Backoffice  $backoffice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Backoffice $backoffice)
+    public function update(Request $request,  $id)
     {
-        //
+
+        $product = Product::find($id);
+        $product->update([
+            "name" => $request->name,
+            "price" => $request->price]);
+            return back();
+//         return redirect('displayProductDetailPage',['id' => $id]);
     }
 
     /**
@@ -82,8 +102,12 @@ class BackofficeController extends Controller
      * @param  \App\Models\Backoffice  $backoffice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Backoffice $backoffice)
+    public function delete ($id)
     {
-        //
+
+
+        Product::where('id',$id)->delete();
+        return view('supprimer',);
     }
+
 }
