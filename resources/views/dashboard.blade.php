@@ -13,11 +13,6 @@
             <td></td>
             <td></td>
             <td> <a href="{{ route('backofficeproductadd') }}"><button type="button" class="btn btn-success">Add product</button></a></td>
-           <td> <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="btn btn-success">Log out</button>
-            </form>
-            </td>
             <th></th>
         </tr>
         <tr>
