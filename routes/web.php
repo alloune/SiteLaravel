@@ -44,3 +44,5 @@ Route::put('/backoffice/product/edit/{product}',[BackofficeProductController::cl
 Route::prefix('backoffice')->group(function () {
     Route::resource('/order', BackofficeOrderController::class)->middleware(['auth']);
 });
+Route::get("message", "MessageController@formMessageGoogle");
+Route::post("message", "MessageController@sendMessageGoogle")->name('send.message.google');
