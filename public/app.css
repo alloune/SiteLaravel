@@ -8,13 +8,20 @@ body{
 .teacherBlock{
     width: 100%;
     text-align: center;
+    margin-top: 50px;
 }
 .globalDesc{
-    margin-top: 100px;
-    margin-left: 250px;
     display: flex;
-    gap:70rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 20px;
 }
+
+.globalDesc p {
+    color: black;
+}
+
 footer{
     font-family: "Open Sans", sans-serif;
     color: white;
@@ -32,6 +39,7 @@ footer h3{
 footer ul{
     list-style-type: none;
 }
+
 .description ul{
     display: flex;
     gap: 60px;
@@ -75,5 +83,19 @@ footer ul{
     position: relative;
 
 
+
+.product_description  {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    gap: 20px;
+    padding-left: 40px;
+    text-align: center;
+}
+
+.one_product {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 
 }
