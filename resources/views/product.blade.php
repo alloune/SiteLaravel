@@ -1,37 +1,67 @@
-@extends('layouts.app')
-@section('title', 'Product')
+@extends('layouts.template')
+@section('title', 'Products')
 @section('content')
 
+    @if($errors->any())
+        <div class="errorDisplay">
+
+            @foreach($errors->all() as $error)
+                <div style="color: red">Oups ! {{ $error }}</div>
+            @endforeach
+        </div>
+    @endif
     <div class="teacherBlock">
-        <h2>Nom du produit</h2>
-        <p>Nom du prof</p>
-        <p>Descritpion du prof</p>
+        @if(Auth::check())
+            <h2>Bienvenue {{ Auth::user()->name }}</h2>
+        @else
+            <h2>Bienvenue utilisateur anonyme ;)</h2>
+        @endif
 
     </div>
     <div class="globalDesc">
-    <div class="description">
-        <h3>Conditions</h3>
+        <div class="description">
+            <h3>Conditions</h3>
+            <form method="get" action="{{ route('products') }}">
+                <select name="sortBy">
+
+                    <option value="name">
+                        Trier par nom
+                    </option>
+                    <option value="price">
+                        Trier par prix
+                    </option>
+                </select>
+                <input type="submit" value="Valider">
+            </form>
+
             <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
-                <li>d</li>
+                @foreach($products as $product)
+                    <div class="displayCourse">
+                        <li class="listCourse">
+                            <p>{{ $product->name }}</p>
+                            <img src="{{ $product->image }}">
+                            <p>Prix : {{ $product->price }} €</p>
+
+                            <div class="actionBtn">
+                                <form action="{{route('product',$product->id) }}" method="GET">
+                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                    <input class="btn btn-dark" type="submit" value="Voir les infos">
+                                </form>
+                                <form action="{{ route('cart.store') }}" method="post">
+                                    @csrf
+                                    <input type="number" name="quantity" placeholder="Quantité">
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <input type="hidden" name="order_id" value="1">
+                                    <input class="btn btn-dark" type="submit" value="Ajouter au panier">
+                                </form>
+                            </div>
+                    </div>
+                    </li>
+                @endforeach
             </ul>
-        <h3>Deroulement</h3>
-            <ul>
-                <li>Bloc 1</li>
-                <p>lorem ipsum blablabla</p>
-                <li>bloc2</li>
-                <p>lorem ipsum blablabla</p>
-                <li>bloc3</li>
-                <p>lorem ipsum blablabla</p>
-            </ul>
+
+        </div>
     </div>
 
-    <div class="resume">
-        <img src="#" alt="Image de présentation">
-        <p>Présentation de la formation, le prix</p>
-        <p> Petit cadre pour presenter l'école</p>
-    </div>
-    </div>
+
 @endsection

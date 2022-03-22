@@ -11,8 +11,6 @@ class Order extends Model
 {
     use HasFactory;
 
-
-
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
@@ -20,8 +18,6 @@ class Order extends Model
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class)->withPivot('quantity');
+        return $this->belongsToMany(Products::class, 'order_product', 'order_id', 'product_id')->withPivot('quantity');
     }
-
-
 }
