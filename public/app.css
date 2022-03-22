@@ -83,9 +83,6 @@ footer ul{
 
 }
 
-.displayCourse .listCourse{
-    list-style-type: none;
-    color: black;}
 
 .product_description  {
     display: flex;
@@ -125,5 +122,83 @@ footer ul{
 .deco:hover{
     background-color: #1A96D9;
     color: #ffffff;
+
+}
+
+/*PRODUCT PAGE*/
+
+.displayCourse h3{
+    order:1;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    top: 450px;
+    width: 200px;
+    text-align: center;
+
+
+
+}
+
+.displayCourse img{
+    order:2;
+
+
+}
+
+.displayCourse h4{
+    order:3;
+    text-align: center;
+    position: relative;
+    top: 150px;
+    z-index: 5;
+
+}
+
+.displayCourse{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    gap: 50px;
+
+
+}
+.displayCourse img{
+    width: auto;
+    height:400px ;
+    position: relative;
+    text-align: center;
+
+}
+.displayCourse .listCourse{
+    list-style-type: none;
+    color: black;
+}
+.displayCourse .actionBtn{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height:400px;
+    order: 5;
+    background-color: #1A96D9;
+}
+.productList{
+    margin-left: 260px;
+}
+.productList li{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.quantity{
+    width: 20%;
+}
+.test{
+    position: relative;
+    top: 200px;
 
 }

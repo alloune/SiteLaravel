@@ -14,7 +14,7 @@ class Customer extends Model
     public $timestamps= false;
 
 
-    public function order(): HasMany
+    public function orders(): HasMany
     {
         return $this->hasMany(Order::class);
     }
