@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 {{--@section('title', "Dashboard")--}}
 {{--@section('content')--}}
 
@@ -44,7 +43,6 @@
 {{--    <div class="courses_button">--}}
 {{--        <a href="{{ route('products') }}" class="myButton">Découvrez nos cours certifiants</a>--}}
 {{--    </div>--}}
-
 
 
 {{--@endsection--}}

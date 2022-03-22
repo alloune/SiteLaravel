@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('title', 'A propos')
 @section('content')
     <h1>Notre équipe</h1>

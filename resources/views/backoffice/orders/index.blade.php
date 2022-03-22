@@ -18,6 +18,7 @@
         </tr>
         </thead>
         <tbody>
+
         @foreach($orders as $order)
 
             <tr>

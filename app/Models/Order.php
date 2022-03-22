@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Order extends Model
 {
     use HasFactory;
+
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
@@ -19,5 +20,4 @@ class Order extends Model
     {
         return $this->belongsToMany(Products::class, 'order_product', 'order_id', 'product_id')->withPivot('quantity');
     }
-
 }

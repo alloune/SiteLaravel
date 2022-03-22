@@ -39,7 +39,6 @@ footer h3{
 footer ul{
     list-style-type: none;
 }
-
 .description ul{
     display: flex;
     gap: 60px;
@@ -82,7 +81,11 @@ footer ul{
 
     position: relative;
 
+}
 
+.displayCourse .listCourse{
+    list-style-type: none;
+    color: black;
 
 .product_description  {
     display: flex;

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
 @section('title', 'BackOffice --  Graduate')
 
@@ -24,12 +24,13 @@
                 </tr>
             </thead>
             <tbody>
-<form method="post" action="#">
+
+    <input type="hidden" name="updatingCart" value="">
             @foreach($order->products as $product)
 
                 <tr>
                     <td>{{ $product->name }}</td>
-                    <td><input type="number" value="{{ $product->pivot->quantity }}"></td>
+                    <td style="color: black">{{ $product->pivot->quantity }}</td>
                     <td>{{ $product->price }} €</td>
                     <form action="{{ route('cart.destroy', $product) }}" method="post">
                         @csrf
@@ -41,8 +42,11 @@
 
             </tbody>
         </table>
-        <input type="submit" value="Valider les changements">
-    </form>
+{{--    <form method="post" action="{{ route('cart.update', 1 )}}">--}}
+{{--        @csrf--}}
+{{--        @method('put')--}}
+{{--        <input type="submit" value="Valider les changements">--}}
+{{--    </form>--}}
 </div>
 
 

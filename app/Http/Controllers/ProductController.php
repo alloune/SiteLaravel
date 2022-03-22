@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -122,6 +121,7 @@ class ProductController extends Controller
     {
         $backoffice->delete();
         return redirect(route('backoffice.index'));
+    }
 
 
     public function search(Request $request){
