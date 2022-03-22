@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10000;
+    z-index: +20;
 }
 .homepage_img img{
     width: 100%;
@@ -49,7 +49,6 @@
     position: absolute;
     top: 20%;
     margin-left: 20%;
-
     z-index: +10;
 }
 
@@ -79,12 +78,12 @@
 
 .logo_university_homepage {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding-top: 25px;
 }
 
 .block_with_picture {
-    padding-left: 230px;
+    padding-left: 0px;
 
 }
 
