@@ -74,6 +74,10 @@ footer ul{
 
     position: relative;
 
+}
 
+.displayCourse .listCourse{
+    list-style-type: none;
+    color: black;
 
 }

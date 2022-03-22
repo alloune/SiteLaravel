@@ -27,16 +27,10 @@ Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
 Route::get('/products', [UserController::class, 'index'])->name('products');
 Route::get('/product/{id}', [UserController::class, 'displayProduct'])->name('product');
 Route::get('/aboutus', [AboutController::class, 'aboutUsPage'])->name('aboutus');
-Route::resource('/backoffice/orders', OrderController::class);
-Route::resource('/backoffice/customers',CustomerController::class);
+Route::resource('/backoffice/orders', OrderController::class)->middleware(['auth']);
+Route::resource('/backoffice/customers',CustomerController::class)->middleware(['auth']);
 Route::resource('/backoffice', ProductController::class)->middleware(['auth']);
 Route::resource('/cart',Order_ProductController::class );
 
-
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

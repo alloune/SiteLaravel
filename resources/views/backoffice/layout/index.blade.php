@@ -67,10 +67,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Categories
-            </a>
+              <form method="post" action="{{ route('logout') }}">
+                  @csrf
+            <button type="submit" class="nav-link" >Se deconnecter</button>
+            </form>
           </li>
         </ul>
       </div>
