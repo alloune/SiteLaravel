@@ -48,7 +48,8 @@
     font-weight: bolder;
     position: absolute;
     top: 20%;
-    margin-left: 20%;
+    margin-left: 29%;
+    padding-top: 100px;
     z-index: +10;
 }
 
