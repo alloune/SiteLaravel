@@ -85,7 +85,7 @@ footer ul{
 
 .displayCourse .listCourse{
     list-style-type: none;
-    color: black;
+    color: black;}
 
 .product_description  {
     display: flex;
@@ -100,5 +100,30 @@ footer ul{
     display: flex;
     justify-content: center;
     margin-top: 100px;
+
+}
+.searchProduct input{
+    height: 38px;
+}
+.searchProduct {
+    display: flex;
+    position: relative;
+    left: 250px;
+    top: 20px;
+}
+.link{
+    position: relative;
+    top: -25px;
+
+}
+.deco{
+    background-color: #1A96D9;
+    color: #ffffff;
+
+}
+
+.deco:hover{
+    background-color: #1A96D9;
+    color: #ffffff;
 
 }

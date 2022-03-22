@@ -129,7 +129,7 @@ class ProductController extends Controller
         $search = $request->input('search');
 
         // Search in the title and body columns from the posts table
-        $products = Product::query()
+        $products = Products::query()
             ->where('name', 'LIKE', "%{$search}%")
             ->orWhere('description', 'LIKE', "%{$search}%")
             ->get();

@@ -29,12 +29,6 @@ use App\Http\Controllers\AdminController;
 //    return view('welcome');
 //});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
-
 Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
 Route::get('/products', [UserController::class, 'index'])->name('products');
 Route::get('/product/{id}', [UserController::class, 'displayProduct'])->name('product');
@@ -44,5 +38,6 @@ Route::resource('/backoffice/customers',CustomerController::class)->middleware([
 Route::resource('/backoffice', ProductController::class)->middleware(['auth']);
 Route::resource('/cart',Order_ProductController::class );
 Route::get('/search/', [ProductController::class, 'search'])->name('search');
+
 
 require __DIR__.'/auth.php';

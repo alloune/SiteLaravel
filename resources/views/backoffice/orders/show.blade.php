@@ -12,7 +12,6 @@
             </thead>
             <tbody>
             <tr>
-                @dump($order->products)
                 @if(count($order->products)==0)
                     <p style="font-style: italic">Cette commande n'a plus d'article</p>
                 @else
