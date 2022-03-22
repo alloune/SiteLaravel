@@ -1,17 +1,12 @@
 <?php
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\BackofficeOrderController;
-use App\Http\Controllers\BackofficeProductController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProductDescriptionController;
 use App\Http\Controllers\VignetteController;
-use App\Http\Controllers\UniversitiesLogoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Order_ProductController;
-use App\Http\Controllers\AdminController;
 
 
 /*
@@ -25,9 +20,7 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
 
 Route::get('/', [VignetteController::class, 'displayCertif'])->name('home');
 Route::get('/products', [UserController::class, 'index'])->name('products');
