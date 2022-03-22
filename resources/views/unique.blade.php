@@ -1,19 +1,26 @@
 @extends('layouts.app')
 
 @section('title')
-{{--    Graduate - {{ $product->name }}--}}
+    Graduate - {{ $product->name }}
 @endsection
 
 @section('content')
-    <div class="productInfo">
-{{--@dd($product)--}}
-        <div>
-            <h1>{{ $product->name }}</h1>
-            <img src="{{ $product->image }}">
-            <p>Prix : {{ $product->price }} €</p>
-        </div>
-        <div class="productDesc">
-            <p>{{ $product->description }}</p>
+
+
+    <div class="card border-info mb-3" style="max-width: 800px; margin-top: 100px; margin-left: 25%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ $product->image }}" class="img-fluid rounded-start" alt="{{ $product->name }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2 class="card-title">{{ $product->name }}</h2>
+                    <br>
+                    <p class="card-text" style="color: black">{{ $product->description }}</p>
+                    <p class="card-text" style="color: black">Prix : {{ $product->price }} €</p>
+                </div>
+            </div>
         </div>
     </div>
+
 @endsection
