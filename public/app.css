@@ -50,6 +50,7 @@ footer ul{
 }
 .productInfo{
     display: flex;
+    margin-top: 15px;
     margin-left: 260px;
     margin-right: 260px;
     text-align: left;
@@ -57,6 +58,7 @@ footer ul{
 
 }
 .productInfo img{
+
     width:200px;
 }
 
