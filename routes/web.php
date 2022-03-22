@@ -45,3 +45,4 @@ Route::prefix('backoffice')->group(function () {
     Route::resource('/order', BackofficeOrderController::class)->middleware(['auth']);
 });
 Route::get('/search/', [ProductController::class, 'search'])->name('search');
+//hello
