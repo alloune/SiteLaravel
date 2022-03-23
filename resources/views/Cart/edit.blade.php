@@ -1,11 +1,11 @@
 @extends('layouts.template')
 
-@section('title', 'BackOffice --  Graduate')
+@section('title', 'Panier')
 
 @section('content')
 
     @if(count($order->products)==0)
-    <h1>VOTRE PANIER EST VIDE</h1>
+    <h1 style="margin-top: 60px">VOTRE PANIER EST VIDE</h1>
     @endif
 
 
