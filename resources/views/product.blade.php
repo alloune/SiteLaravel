@@ -20,7 +20,7 @@
     </div>
     <div class="globalDesc">
         <div class="description">
-            <h3>Conditions</h3>
+            <h3>Trier par</h3>
             <form method="get" action="{{ route('products') }}">
                 <select name="sortBy">
 
@@ -34,26 +34,28 @@
                 <input type="submit" value="Valider">
             </form>
 
-            <ul>
+            <ul class="productList">
                 @foreach($products as $product)
                     <div class="displayCourse">
                         <li class="listCourse">
-                            <p>{{ $product->name }}</p>
+                            <h3>{{ $product->name }}</h3>
                             <img src="{{ $product->image }}">
-                            <p>Prix : {{ $product->price }} €</p>
+                            <h4>Prix : {{ $product->price }} €</h4>
 
                             <div class="actionBtn">
-                                <form action="{{route('product',$product->id) }}" method="GET">
-                                    <input type="hidden" name="id" value="{{ $product->id }}">
-                                    <input class="btn btn-dark" type="submit" value="Voir les infos">
-                                </form>
-                                <form action="{{ route('cart.store') }}" method="post">
-                                    @csrf
-                                    <input type="number" name="quantity" placeholder="Quantité">
-                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <input type="hidden" name="order_id" value="1">
-                                    <input class="btn btn-dark" type="submit" value="Ajouter au panier">
-                                </form>
+                                <div class="test">
+                                    <form action="{{route('product',$product->id) }}" method="GET">
+                                        <input type="hidden" name="id" value="{{ $product->id }}">
+                                        <input class="btn btn-dark" type="submit" value="Voir les infos">
+                                    </form>
+                                    <form action="{{ route('cart.store') }}" method="post">
+                                        @csrf
+                                        <input class="quantity" type="number" name="quantity" placeholder="Quantité">
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <input type="hidden" name="order_id" value="1">
+                                        <input class="btn btn-dark" type="submit" value="Ajouter au panier">
+                                    </form>
+                                </div>
                             </div>
                     </div>
                     </li>
