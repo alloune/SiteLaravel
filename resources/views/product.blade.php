@@ -44,7 +44,7 @@
 
                             <div class="actionBtn">
                                 <div class="test">
-                                    <form action="{{route('product',$product->id) }}" method="GET">
+                                    <form class="info" action="{{route('product',$product->id) }}" method="GET">
                                         <input type="hidden" name="id" value="{{ $product->id }}">
                                         <input class="btn btn-dark" type="submit" value="Voir les infos">
                                     </form>
@@ -53,7 +53,7 @@
                                         <input class="quantity" type="number" name="quantity" placeholder="Quantité">
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <input type="hidden" name="order_id" value="1">
-                                        <input class="btn btn-dark" type="submit" value="Ajouter au panier">
+                                        <input class="btn btn-dark addToCart" type="submit" value="Ajouter au panier">
                                     </form>
                                 </div>
                             </div>
