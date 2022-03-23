@@ -7,10 +7,6 @@
     @foreach ($products as $product)
         <p>Nom du produit {{$product->name}}</p>
         <a href="/product/{{$product->id}}"><img src="{{$product->img}}" alt="image de : {{$product->name}}"></a>
-
-        @if ($product->price > 20)
-            <p>mauvaise affaire</p>
-        @endif
         <p>{{$product->name}} = {{$product->price}}</p>
         <p>il reste {{$product->quantity}} de ce produit en stock</p>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 
@@ -18,6 +19,7 @@ class BackofficeController extends Controller
     {
 
         $products = Product::all();
+
         return view('backoffice', ['products' => $products]);
     }
 
@@ -41,6 +43,13 @@ class BackofficeController extends Controller
      */
     public function creat (Request $request)
     {
+        $this->validate($request,[
+            'name' => 'required|max:255',
+            'price' => 'required|max:255',
+            'img' => 'required|max:255',
+            'quantity' => 'required|max:255',
+        ]);
+
         Product::create([
             "title" => $request->title,
             "name" => $request->name,
@@ -50,8 +59,11 @@ class BackofficeController extends Controller
             "img" => $request->img,
             "quantity" => $request->quantity,
             "categorie" => $request->categorie,
-            "available" => $request->available,]);
+            "available" => $request->available,
+        ]);
+
         $products = Product::all();
+
         return view('backoffice',['products' => $products]);
     }
 
@@ -73,7 +85,7 @@ class BackofficeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id){
-     $product = Product::find($id);
+        $product = Product::find($id);
 
         return view('edit', ['product' => $product]);
     }
@@ -87,13 +99,18 @@ class BackofficeController extends Controller
      */
     public function update(Request $request,  $id)
     {
-
         $product = Product::find($id);
+
+        $this->validate($request,[
+            'name' => 'required|max:255',
+            'price' => 'required|max:255',
+        ]);
         $product->update([
             "name" => $request->name,
-            "price" => $request->price]);
-            return back();
-//         return redirect('displayProductDetailPage',['id' => $id]);
+            "price" => $request->price
+        ]);
+
+        return redirect('backoffice');
     }
 
     /**
@@ -104,9 +121,8 @@ class BackofficeController extends Controller
      */
     public function delete ($id)
     {
-
-
         Product::where('id',$id)->delete();
+
         return view('supprimer',);
     }
 

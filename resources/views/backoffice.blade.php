@@ -12,6 +12,7 @@
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
+                    <th>CATHEGORIES</th>
                     <th>PRICE</th>
                     <th>QUANTITY</th>
                 </tr>
@@ -21,6 +22,7 @@
              <tr>
                 <td>{{$product->id}}</td>
                 <td>{{$product->name}}</td>
+                 <td>{{$product->categorie}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->quantity}}</td>
                  <th><a href="{{ route("displayProductDetailPage",['id'=>$product->id])}}"><button type="button" class="btn btn-info">voir</button></a></th>
