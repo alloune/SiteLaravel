@@ -11,6 +11,6 @@ class Category extends Model
     public $timestamps=false;
     use HasFactory;
     public function products(){
-        return $this->hasMany('App\Models\Products');
+        return $this->hasMany('App\Models\Product');
     }
 }

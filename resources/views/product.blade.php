@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('title', 'Products')
+@section('title', 'Product')
 @section('content')
 
     @if($errors->any())

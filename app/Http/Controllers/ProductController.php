@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Products::all();
+        $products = Product::all();
         return view("backoffice.Products.index", compact("products"));
     }
 
@@ -47,7 +47,7 @@ class ProductController extends Controller
 
 
 
-        Products::create([
+        Product::create([
             "name" => $request->input("name"),
             "description" => $request->input("description"),
             "image" => $request->input('image'),
@@ -55,7 +55,7 @@ class ProductController extends Controller
             "available" => $request->input('available'),
             "quantity" => $request->input("quantity")
         ]);
-        return redirect(route('backoffice.index'));
+        return redirect(route('backoffice'));
 
 
     }
@@ -63,10 +63,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Products $backoffice
+     * @param \App\Models\Product $backoffice
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $backoffice)
+    public function show(Product $backoffice)
         //ATTENTION !!! Le nom de la variable doit être identique au nom dans la route
     {
 
@@ -76,10 +76,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Products $backoffice
+     * @param \App\Models\Product $backoffice
      * @return \Illuminate\Http\Response
      */
-    public function edit(Products $backoffice)
+    public function edit(Product $backoffice)
     {
         return view('backoffice.Products.edit', compact("backoffice"));
     }
@@ -88,10 +88,10 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Products $backoffice
+     * @param \App\Models\Product $backoffice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $backoffice)
+    public function update(Request $request, Product $backoffice)
     {
         $request->validate([
             "name" =>'required|max:44',
@@ -115,10 +115,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Products $products
+     * @param \App\Models\Product $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Products $backoffice)
+    public function destroy(Product $backoffice)
     {
         $backoffice->delete();
         return redirect(route('backoffice.index'));
@@ -130,7 +130,7 @@ class ProductController extends Controller
         $search = $request->input('search');
 
         // Search in the title and body columns from the posts table
-        $products = Products::query()
+        $products = Product::query()
             ->where('name', 'LIKE', "%{$search}%")
             ->orWhere('description', 'LIKE', "%{$search}%")
             ->get();
