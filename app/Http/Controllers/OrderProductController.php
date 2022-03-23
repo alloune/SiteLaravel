@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order_Product;
+use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Order;
-use App\Models\Products;
+use App\Models\Product;
 
 
-class Order_ProductController extends Controller
+class OrderProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,7 +41,7 @@ class Order_ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $productQuantity = Products::find($request->product_id);
+        $productQuantity = Product::find($request->product_id);
         $limitQuantity = $productQuantity->quantity;
 
         $request->validate([
@@ -50,14 +50,14 @@ class Order_ProductController extends Controller
             "quantity" => "required|integer|min:0|max:$limitQuantity"
         ]);
 
-        $isset = Order_Product::where('product_id', $request->input('product_id'))->where('order_id', $request->input('order_id'))->first();
+        $isset = OrderProduct::where('product_id', $request->input('product_id'))->where('order_id', $request->input('order_id'))->first();
         if (isset($isset)) {
 
 
             $this->update($request, $isset);
 
         } else {
-            Order_Product::create([
+            OrderProduct::create([
                     'product_id' => $request->input('product_id'),
                     'order_id' => $request->input('order_id'),
                     'quantity' => $request->input('quantity')
@@ -75,10 +75,10 @@ class Order_ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Order_Product $order_Product
+     * @param \App\Models\OrderProduct $OrderProduct
      * @return \Illuminate\Http\Response
      */
-    public function show(Order_Product $order_Product)
+    public function show(OrderProduct $OrderProduct)
     {
         //
     }
@@ -86,10 +86,10 @@ class Order_ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Order_Product $order_Product
+     * @param \App\Models\OrderProduct $OrderProduct
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $id)//remettre un type order_product
+    public function edit(int $id)//remettre un type OrderProduct
     {
         $order = Order::find($id);
 
@@ -101,10 +101,10 @@ class Order_ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Order_Product $order_Product
+     * @param \App\Models\OrderProduct $OrderProduct
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order_Product $isset)
+    public function update(Request $request, OrderProduct $isset)
     {
 
 
@@ -122,13 +122,13 @@ class Order_ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Order_Product $order_Product
+     * @param \App\Models\OrderProduct $OrderProduct
      * @return \Illuminate\Http\Response
      */
     public function destroy($product)
     {
 
-        Order_Product::where('product_id', $product)->where('order_id', 1)->delete();
+        OrderProduct::where('product_id', $product)->where('order_id', 1)->delete();
         return back();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class APIProductController extends Controller
@@ -14,7 +14,7 @@ class APIProductController extends Controller
      */
     public function index()
     {
-        $products = Products::all();
+        $products = Product::all();
 
         return response()->json($products);
     }
@@ -38,7 +38,7 @@ class APIProductController extends Controller
 //            'quantity' => 'required|numeric|min:0',
 //        ]);
 
-        $product = Products::create([
+        $product = Product::create([
             'name' => $request->input('name'),
             'category_id' => $request->input('category_id'),
             'price' => $request->input('price'),
@@ -55,10 +55,10 @@ class APIProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Products  $product
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $product)
+    public function show(Product $product)
     {
         return response()->json($product);
     }
@@ -67,10 +67,10 @@ class APIProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Products  $product
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $product)
+    public function update(Request $request, Product $product)
     {
 //        $this->validate($request, [
 //            'name' => 'required|string|max:255',
@@ -100,10 +100,10 @@ class APIProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Products  $product
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Products $product)
+    public function destroy(Product $product)
     {
         $product->delete();
 
