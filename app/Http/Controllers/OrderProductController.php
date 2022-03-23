@@ -41,6 +41,7 @@ class OrderProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $productQuantity = Product::find($request->product_id);
         $limitQuantity = $productQuantity->quantity;
 
