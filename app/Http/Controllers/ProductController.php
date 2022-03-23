@@ -40,6 +40,7 @@ class ProductController extends Controller
 
             $request->validate([
             "name"=>'required|unique:products|max:255',
+            "description"=>'required|unique:products|max:255',
             "image"=>'required|max:255|',
             "price"=>'required||int|min:0',
             "available"=>'required']);

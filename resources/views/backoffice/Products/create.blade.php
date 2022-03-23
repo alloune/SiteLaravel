@@ -27,7 +27,11 @@
                     <tbody>
                     <tr>
                         <td>Nom</td>
-                        <td><input type="text" placeholder="Nom" name="name" ></td>
+                        <td><input type="text" class="@error('name') is-invalid @enderror" placeholder="Nom" name="name" >
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </td>
 {{--                        class="@error('name') is-invalid @enderror" a mettre dans le form--}}
 {{--                        @error('name')--}}
 {{--                        <tr>{{ $error }}</tr>--}}
@@ -37,16 +41,28 @@
                     <tr>
                         <td>Description</td>
                         <td>
-                            <input type="textarea" cols="40" rows="5" placeholder="Description de la formation"
-                                   name="description"></td>
+                            <input type="textarea" name="description" class="@error('description') is-invalid @enderror" cols="40" rows="5" placeholder="Description de la formation">
+                            @error('description')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </td>
+
                     </tr>
                     <tr>
                         <td>Image</td>
-                        <td><input type="texte" placeholder="Lien de l'image" name="image"></td>
+                        <td><input type="texte" class="@error('image') is-invalid @enderror" placeholder="Lien de l'image" name="image">
+                            @error('image')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </td>
                     </tr>
                     <tr>
                         <td>Price</td>
-                        <td><input type="number" placeholder="Prix" name="price"></td>
+                        <td><input type="number" class="@error('price') is-invalid @enderror" placeholder="Prix" name="price">
+                            @error('price')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </td>
                     </tr>
                     <tr>
                         <td>Disponible</td>
@@ -58,7 +74,11 @@
                     </tr>
                     <tr>
                         <td>Quantité</td>
-                        <td><input type="number" placeholder="Unité" name="quantity"></td>
+                        <td><input type="number" class="@error('quantity') is-invalid @enderror" placeholder="Unité" name="quantity">
+                            @error('quantity')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </td>
                     </tr>
                     </tbody>
 

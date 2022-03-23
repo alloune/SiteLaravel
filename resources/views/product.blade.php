@@ -50,7 +50,10 @@
                                     </form>
                                     <form action="{{ route('cart.store') }}" method="post">
                                         @csrf
-                                        <input class="quantity" type="number" name="quantity" placeholder="Quantité">
+                                        <input class="quantity @error('quantity') is-invalid @enderror" type="number" name="quantity" placeholder="Quantité">
+                                        @error('description')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <input type="hidden" name="order_id" value="1">
                                         <input class="btn btn-dark addToCart" type="submit" value="Ajouter au panier">
