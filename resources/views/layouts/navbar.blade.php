@@ -21,7 +21,7 @@
     @endif
     <a href="{{ route('cart.edit', 1) }}">Mon panier</a>
     <a href="{{route('aboutus')}}">A propos</a>
-        @if(Auth::check())
+        @if(Auth::check() && Auth::user()->role ==='god')
     <a href="{{ route("backoffice.index") }}">BackOffice</a>
         @endif
     <a href="{{route('products')}}">Diplômes</a>
