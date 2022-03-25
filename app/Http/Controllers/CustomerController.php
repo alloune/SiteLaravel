@@ -15,7 +15,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customers=Customer::all();
-        return view('backoffice.customers.index', compact('customers'));
+        return view('backoffice.Customers.index', compact('customers'));
     }
 
     /**
@@ -51,7 +51,7 @@ class CustomerController extends Controller
             "postal_code"=>$request->input('postal_code'),
             "city"=>$request->input('city'),
         ]);
-        return redirect(route('customers.index'));
+        return redirect(route('Customers.index'));
 
     }
 
@@ -74,7 +74,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        return view('backoffice.customers.edit', compact('customer'));
+        return view('backoffice.Customers.edit', compact('customer'));
     }
 
     /**
@@ -103,7 +103,7 @@ class CustomerController extends Controller
             "city"=>$request->input('city'),
         ]);
 
-        return redirect()->route('customers.index');
+        return redirect()->route('Customers.index');
     }
 
     /**
@@ -115,6 +115,6 @@ class CustomerController extends Controller
     public function destroy(Customer $customer)
     {
         $customer->delete();
-        return redirect()->route('customers.index');
+        return redirect()->route('Customers.index');
     }
 }
