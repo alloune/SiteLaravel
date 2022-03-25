@@ -28,12 +28,12 @@ Route::get('/products', [UserController::class, 'index'])->name('products');
 Route::get('/product/{id}', [UserController::class, 'displayProduct'])->name('product');
 
 Route::get('/about-us', [AboutController::class, 'aboutUsPage'])->name('aboutus');
+
+
 //voir les groupes
-
-
-Route::resource('/backoffice/orders', OrderController::class)->middleware(['auth']);
-Route::resource('/backoffice/customers',CustomerController::class)->middleware(['auth']);
-Route::resource('/backoffice', ProductController::class)->middleware(['auth']);
+Route::resource('/backoffice/orders', OrderController::class)->middleware(['auth, checkRole']);
+Route::resource('/backoffice/customers',CustomerController::class)->middleware(['auth, checkRole']);
+Route::resource('/backoffice', ProductController::class)->middleware(['auth, checkRole']);
 
 Route::resource('/cart',OrderProductController::class );
 

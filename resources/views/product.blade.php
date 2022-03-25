@@ -13,6 +13,7 @@
     <div class="teacherBlock">
         @if(Auth::check())
             <h2>Bienvenue {{ Auth::user()->name }}</h2>
+            <h2>Le  {{ Auth::user()->role }}</h2>
         @else
             <h2>Bienvenue utilisateur anonyme ;)</h2>
         @endif
