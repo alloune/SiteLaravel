@@ -54,7 +54,7 @@ class ProductController extends Controller
             "available" => $request->input('available'),
             "quantity" => $request->input("quantity")
         ]);
-        return redirect(route('backoffice'));
+        return back();
 
 
     }
