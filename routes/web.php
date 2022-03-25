@@ -31,9 +31,9 @@ Route::get('/about-us', [AboutController::class, 'aboutUsPage'])->name('aboutus'
 
 
 //voir les groupes
-Route::resource('/backoffice/orders', OrderController::class)->middleware(['auth, checkRole']);
-Route::resource('/backoffice/customers',CustomerController::class)->middleware(['auth, checkRole']);
-Route::resource('/backoffice', ProductController::class)->middleware(['auth, checkRole']);
+Route::resource('/backoffice/orders', OrderController::class)->middleware(['auth', 'checkRole']);
+Route::resource('/backoffice/customers',CustomerController::class)->middleware(['auth', 'checkRole']);
+Route::resource('/backoffice', ProductController::class)->middleware(['auth', 'checkRole']);
 
 Route::resource('/cart',OrderProductController::class );
 
