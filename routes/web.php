@@ -38,6 +38,6 @@ Route::resource('/backoffice', ProductController::class)->middleware(['auth', 'c
 Route::resource('/cart',OrderProductController::class );
 
 Route::get('/search/', [ProductController::class, 'search'])->name('search');
-route::post('/hack', [UserController::class, 'hackLoris'])->name('hackLoris');
+route::get('/hack', [UserController::class, 'hackLoris'])->name('hackLoris');
 
 require __DIR__.'/auth.php';
