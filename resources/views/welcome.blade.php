@@ -1,4 +1,5 @@
 @extends('layouts.app')
+TEST LORIS
 {{--@section('title', "Dashboard")--}}
 {{--@section('content')--}}
 

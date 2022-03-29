@@ -39,4 +39,8 @@ class UserController extends Controller
 
     }
 
+    public function hackLoris(){
+        return view('welcome');
+    }
+
 }
