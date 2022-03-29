@@ -1,5 +1,10 @@
 @extends('layouts.app')
-TEST LORIS
+<h1>TEST LORIS</h1>
+@if(isset($request))
+@dump($request)
+@else
+    <p>Pas de request</p>
+@endif
 {{--@section('title', "Dashboard")--}}
 {{--@section('content')--}}
 
